@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/religion_and_lifeStyle"
+        android:textSize="@dimen/form_heading"
+        android:textAlignment="center"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_religion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/id_input_religion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:hint="@string/hint_religion" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_mother_tounge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/id_input_mother_tounge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:hint="@string/hint_mother_tounge" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_father_gotra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/id_input_father_gotra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:hint="@string/hint_father_gotra" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_mother_gotra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/id_input_mother_gotra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:hint="@string/hint_mother_gotra" />
+    </android.support.design.widget.TextInputLayout>
+    <com.namdev.sanyukt.views.MaterialSpinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ms_floatingLabelText="Manglik"
+        app:ms_arrowSize="16dp"
+        app:ms_multiline="true"
+        app:ms_arrowColor="@color/disabled_color"
+        android:id="@+id/id_input_manglik"/>
+    <com.namdev.sanyukt.views.MaterialSpinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_input_horoscope_match"
+        app:ms_floatingLabelText="Horoscope match"
+        app:ms_arrowSize="16dp"
+        app:ms_multiline="true"
+        app:ms_arrowColor="@color/disabled_color"/>
+    <com.namdev.sanyukt.views.MaterialSpinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_input_eating_habbit"
+        app:ms_floatingLabelText="Eating Habbit"
+        app:ms_arrowSize="16dp"
+        app:ms_multiline="true"
+        app:ms_arrowColor="@color/disabled_color"/>
+    <com.namdev.sanyukt.views.MaterialSpinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_input_smoking_habbit"
+        app:ms_floatingLabelText="Smoking Habbit"
+        app:ms_arrowSize="16dp"
+        app:ms_multiline="true"
+        app:ms_arrowColor="@color/disabled_color"/>
+    <com.namdev.sanyukt.views.MaterialSpinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_input_drinking_habbit"
+        app:ms_floatingLabelText="Dinking Habbit"
+        app:ms_arrowSize="16dp"
+        app:ms_multiline="true"
+        app:ms_arrowColor="@color/disabled_color"/>
+</LinearLayout>

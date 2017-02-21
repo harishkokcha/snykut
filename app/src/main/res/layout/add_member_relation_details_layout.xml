@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/id_mobile_verification_dialog_hdr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingBottom="16dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            android:text="@string/religion_and_lifeStyle"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/id_mobile_verification_dialog_close_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingEnd="@dimen/dialog_header_h_margin"
+            android:paddingRight="@dimen/dialog_header_h_margin"
+            android:src="@mipmap/ic_close_white" />
+    </RelativeLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_xsmall"
+            android:paddingTop="@dimen/padding_xsmall">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--<android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_religion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_religion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_religion"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>-->
+
+                <!--<android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_mother_tounge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_mother_tounge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_mother_tounge"
+                        android:imeOptions="actionNext"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>
+    -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_father_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Father Name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_father_gotra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_father_gotra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_father_gotra"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>
+
+                <com.namdev.sanyukt.views.MaterialSpinner
+                    android:id="@+id/id_input_father_occupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ms_arrowColor="@color/disabled_color"
+                    app:ms_arrowSize="16dp"
+                    app:ms_floatingLabelText="Father Occupation"
+                    app:ms_multiline="true" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_mother_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Mother Name"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_mother_gotra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_mother_gotra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_mother_gotra"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </android.support.design.widget.TextInputLayout>
+
+                <com.namdev.sanyukt.views.MaterialSpinner
+                    android:id="@+id/id_input_mother_occupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ms_arrowColor="@color/disabled_color"
+                    app:ms_arrowSize="16dp"
+                    app:ms_floatingLabelText="Mother Occupation"
+                    app:ms_multiline="true" />
+
+                <com.namdev.sanyukt.views.MaterialSpinner
+                    android:id="@+id/id_input_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ms_arrowColor="@color/disabled_color"
+                    app:ms_arrowSize="16dp"
+                    app:ms_floatingLabelText="State"
+                    app:ms_multiline="true" />
+
+                <com.namdev.sanyukt.views.MaterialSpinner
+                    android:id="@+id/id_input_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ms_arrowColor="@color/disabled_color"
+                    app:ms_arrowSize="16dp"
+                    app:ms_floatingLabelText="City"
+                    app:ms_multiline="true" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/id_member_relation_details_add_diolog_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_app_button"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Add " />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

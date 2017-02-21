@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="relation_array">
+        <item>Profile For</item>
+        <item>My Self</item>
+        <item>Son</item>
+        <item>Daughter</item>
+        <item>Brother</item>
+        <item>Sister</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="gender_array">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="body_type_array">
+        <item>Body Type</item>
+        <item>Average</item>
+        <item>Athletic</item>
+        <item>Slim</item>
+        <item>Heavy</item>
+    </string-array>
+
+    <string-array name="body_complexion_array">
+        <item>Body Complexion</item>
+        <item>Very fair</item>
+        <item>Fair</item>
+        <item>Wheatish</item>
+        <item>Wheatish medium</item>
+        <item>dark</item>
+    </string-array>
+
+    <string-array name="marital_status_array">
+        <item>Marital Status</item>
+        <item>unmarried</item>
+        <item>married</item>
+        <item>divorced</item>
+        <item>widow/widower</item>
+    </string-array>
+
+    <string-array name="have_child_array">
+        <item>Child Info</item>
+        <item>No</item>
+        <item>Yes, Living together</item>
+        <item>Yes, Not Living together</item>
+    </string-array>
+
+    <string-array name="physical_status_array">
+        <item>Physical Status</item>
+        <item>Normal</item>
+        <item>Physically challenged</item>
+    </string-array>
+
+    <string-array name="drinking_habbit_array">
+        <item>Drinking Habbit</item>
+        <item>Non Drinker</item>
+        <item>Occasionally</item>
+        <item>Regular drinker</item>
+    </string-array>
+    <string-array name="smoking_habbit_array">
+        <item>Smoking Habbit</item>
+        <item>Non Smoker</item>
+        <item>Occasionally</item>
+        <item>Regular Smoker</item>
+    </string-array>
+    <string-array name="eating_habbit_array">
+        <item>Eating Habbit</item>
+        <item>Vegetarian</item>
+        <item>Non vagetarian</item>
+        <item>Eggtarian</item>
+    </string-array>
+    <string-array name="horoscope_match_array">
+        <item>Horoscope Match</item>
+        <item>Does not matter</item>
+        <item>Yes</item>
+        <item>NO</item>
+    </string-array>
+    <string-array name="manglik_array">
+        <item>Manglik</item>
+        <item>Does not matter</item>
+        <item>Yes</item>
+        <item>NO</item>
+    </string-array>
+    <string-array name="employement_in_array">
+        <item>Select Employment In</item>
+        <item>MNC</item>
+        <item>Central Government</item>
+        <item>State Government</item>
+        <item>Private Sector</item>
+        <item>Public Sector</item>
+        <item>Defence</item>
+        <item>Not Working</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="annual_salary_array">
+        <item>Select Annual Salary</item>
+        <item>Under 50 Thousand</item>
+        <item>50 Thousand to 1 Lakh</item>
+        <item>1 Lakh to 2 Lakh</item>
+        <item>2 Lakh to 3 Lakh</item>
+        <item>3 Lakh to 4 Lakh</item>
+        <item>4 Lakh to 5 Lakh</item>
+        <item>5 Lakh to 7 Lakh</item>
+        <item>7 Lakh to 10 Lakh</item>
+        <item>10 Lakh to 15 Lakh</item>
+        <item>15 Lakh to 20 Lakh</item>
+        <item>20 Lakh to 25 Lakh</item>
+        <item>25 Lakh to 30 Lakh</item>
+        <item>30 Lakh to 35 Lakh</item>
+        <item>35 Lakh to 40 Lakh</item>
+        <item>40 Lakh to 45 Lakh</item>
+        <item>45 Lakh to 50 Lakh</item>
+        <item>Donot wish to specify</item>
+
+    </string-array>
+    <string-array name="family_value_array" >
+        <item>Family Value</item>
+        <item>Orthodox</item>
+        <item>Traditional</item>
+        <item>Moderate</item>
+        <item>libreal</item>
+    </string-array>
+    <string-array name="family_type_array" >
+        <item>Family Type</item>
+        <item>Joint Family</item>
+        <item>Nuclear Family</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="family_status_array" >
+        <item>Family Status</item>
+        <item>Middle classs</item>
+        <item>Upper-middle class</item>
+        <item>Rich</item>
+        <item>Affluent</item>
+    </string-array>
+
+</resources>

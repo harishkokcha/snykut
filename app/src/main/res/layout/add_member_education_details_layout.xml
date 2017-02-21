@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/id_mobile_verification_dialog_hdr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:paddingBottom="16dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            android:text="@string/education_and_professional_info"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/id_mobile_verification_dialog_close_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingEnd="@dimen/dialog_header_h_margin"
+            android:paddingRight="@dimen/dialog_header_h_margin"
+            android:src="@mipmap/ic_close_white" />
+    </RelativeLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_xsmall"
+            android:paddingTop="@dimen/padding_xsmall">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--  <com.namdev.sanyukt.views.MaterialSpinner
+                      android:id="@+id/id_input_education"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      app:ms_arrowColor="@color/disabled_color"
+                      app:ms_arrowSize="16dp"
+                      app:ms_floatingLabelText="Education"
+                      app:ms_multiline="true" />
+      -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_education"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Education" />
+
+                </android.support.design.widget.TextInputLayout>
+                <!--<com.namdev.sanyukt.views.MaterialSpinner
+                    android:id="@+id/id_input_education_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ms_arrowColor="@color/disabled_color"
+                    app:ms_arrowSize="16dp"
+                    app:ms_floatingLabelText="Education Details"
+                    app:ms_multiline="true" />
+    -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_education_heigher"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Higher Education" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <com.namdev.sanyukt.views.MaterialSpinner
+                    android:id="@+id/id_input_employement_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ms_arrowColor="@color/disabled_color"
+                    app:ms_arrowSize="16dp"
+                    app:ms_floatingLabelText="Employement In"
+                    app:ms_multiline="true" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_employement_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Employment Details" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <com.namdev.sanyukt.views.MaterialSpinner
+                    android:id="@+id/id_input_annual_income"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ms_arrowColor="@color/disabled_color"
+                    app:ms_arrowSize="16dp"
+                    app:ms_floatingLabelText="Employement In"
+                    app:ms_multiline="true" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="city" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/id_input_state"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="State" />
+
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/id_member_education_details_add_diolog_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_app_button"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Add " />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

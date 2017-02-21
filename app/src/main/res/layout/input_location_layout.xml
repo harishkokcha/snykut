@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/location_details"
+        android:textAlignment="center"
+        android:textSize="@dimen/form_heading" />
+
+    <com.namdev.sanyukt.views.MaterialSpinner
+        android:id="@+id/id_input_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ms_arrowColor="@color/disabled_color"
+        app:ms_arrowSize="16dp"
+        app:ms_floatingLabelText="City"
+        app:ms_multiline="true" />
+
+    <com.namdev.sanyukt.views.MaterialSpinner
+        android:id="@+id/id_input_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ms_arrowColor="@color/disabled_color"
+        app:ms_arrowSize="16dp"
+        app:ms_floatingLabelText="State"
+        app:ms_multiline="true" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/id_input_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="address" />
+    </android.support.design.widget.TextInputLayout>
+</LinearLayout>

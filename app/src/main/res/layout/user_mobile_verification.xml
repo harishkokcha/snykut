@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/id_user_mobile_sv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:background="@color/white"
+    android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb">
+
+    <LinearLayout
+        android:id="@+id/id_user_mobile"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingStart="@dimen/update_user_location_h_padding"
+        android:paddingLeft="@dimen/update_user_location_h_padding"
+        android:paddingEnd="@dimen/update_user_location_h_padding"
+        android:paddingRight="@dimen/update_user_location_h_padding"
+        android:paddingBottom="@dimen/update_user_location_v_padding"
+        android:paddingTop="@dimen/update_user_location_item_30dp_margin"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/id_user_mobile_hdr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/user_mobile_hdr"
+            android:textSize="@dimen/update_user_location_heading"
+            android:textColor="@color/darker_grey"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/update_user_location_item_30dp_margin"
+            android:layout_marginBottom="@dimen/update_user_location_item_30dp_margin"/>
+
+        <TextView
+            android:id="@+id/id_user_mobile_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/user_mobile_body"
+            android:textSize="@dimen/heading"
+            android:gravity="center"
+            android:textColor="@color/Sanyukt_Grey"
+            android:paddingTop="@dimen/update_user_location_item_v_padding"/>
+
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/actionbtn_blue_bg"
+            android:layout_marginTop="@dimen/update_user_location_item_30dp_margin">
+            <LinearLayout android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="1dp"
+                android:background="@drawable/actionbtn_white_bg">
+                <EditText
+                    android:id="@+id/id_user_mobile_otp_txtvw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:hint="@string/enter_otp"
+                    android:textSize="@dimen/otp_text_size"
+                    android:inputType="number"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@android:color/transparent"
+                    android:maxLength="@integer/otp_maxlength"
+                    android:paddingTop="@dimen/update_user_location_item_v_padding"
+                    android:paddingBottom="@dimen/update_user_location_item_v_padding"
+                    android:paddingLeft="@dimen/update_user_location_item_30dp_margin"
+                    android:paddingRight="@dimen/update_user_location_item_30dp_margin"
+                    android:gravity="center"
+                    android:maxLines="1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/id_user_mobile_action_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/verify"
+            android:textSize="@dimen/heading"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"
+            android:paddingTop="@dimen/update_user_location_item_v_padding"
+            android:paddingBottom="@dimen/update_user_location_item_v_padding"
+            android:paddingLeft="@dimen/update_user_location_item_30dp_margin"
+            android:paddingRight="@dimen/update_user_location_item_30dp_margin"
+            android:layout_marginTop="@dimen/update_user_location_item_30dp_margin"
+            android:gravity="center" />
+
+
+        <TextView
+            android:id="@+id/id_user_mobile_resend_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/resend_code_txt"
+            android:textSize="@dimen/heading"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/update_user_location_item_30dp_margin"/>
+
+
+        <TextView
+            android:id="@+id/id_user_mobile_resend_otp_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/request_otp_again_msg"
+            android:textSize="@dimen/heading3"
+            android:gravity="center"
+            android:textColor="@color/darker_grey"/>
+
+        <TextView
+            android:id="@+id/id_user_mobile_footer_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/mobile_verification_footer_note"
+            android:textSize="@dimen/heading5"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/update_user_location_item_30dp_margin"
+            android:textColor="@color/darker_grey"/>
+
+    </LinearLayout>
+</ScrollView>

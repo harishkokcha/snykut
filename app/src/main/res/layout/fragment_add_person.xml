@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_xsmall"
+            android:paddingTop="@dimen/padding_xsmall">
+
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_profile_for"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Profile For"
+                app:ms_multiline="true" />
+
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/id_input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="@string/hint_name"
+                android:inputType="text"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+            <!--
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/input_layout_birth_palace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+                            <EditText
+                                android:id="@+id/id_input_birth_palace"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:hint="@string/hint_birth_palace"
+                                android:imeOptions="actionNext"
+                                android:maxLines="1" />
+                        </android.support.design.widget.TextInputLayout>-->
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_dob"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/id_input_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center"
+                    android:hint="@string/hint_dob" />
+            </android.support.design.widget.TextInputLayout>
+
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_manglik"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Manglik"
+                app:ms_multiline="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_profile_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:paddingLeft="2dp"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Gender"
+                app:ms_multiline="true" />
+
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_physical_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Physical Status"
+                app:ms_multiline="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_height"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/id_input_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_height_in_cms"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_weight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/id_input_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_weight_in_kg"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:maxLines="1" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_body_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Body Type"
+                app:ms_multiline="true" />
+
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_body_complexion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Body Complexion"
+                app:ms_multiline="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_marital_satus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Marital Status"
+                app:ms_multiline="true" />
+
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_have_child"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Have Child"
+                app:ms_multiline="true" />
+        </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/id_input_education"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Education" />
+
+        </android.support.design.widget.TextInputLayout>
+        <!--<com.namdev.sanyukt.views.MaterialSpinner
+            android:id="@+id/id_input_education_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ms_arrowColor="@color/disabled_color"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelText="Education Details"
+            app:ms_multiline="true" />
+-->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/id_input_education_heigher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Higher Education" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <com.namdev.sanyukt.views.MaterialSpinner
+            android:id="@+id/id_input_employement_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ms_arrowColor="@color/disabled_color"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelText="Employement In"
+            app:ms_multiline="true" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/id_input_employement_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Employment Details" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <com.namdev.sanyukt.views.MaterialSpinner
+            android:id="@+id/id_input_annual_income"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ms_arrowColor="@color/disabled_color"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelText="Employement In"
+            app:ms_multiline="true" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/id_input_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="city" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/id_input_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="State" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Submit"
+            android:id="@+id/id_fragment_new_member_submit"
+            android:includeFontPadding="false"
+            android:gravity="center"
+            android:padding="15dp"
+            android:background="@drawable/background_app_button" />
+    </LinearLayout>
+</ScrollView>

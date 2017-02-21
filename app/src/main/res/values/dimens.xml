@@ -1,0 +1,64 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="padding_15dp">15dp</dimen>
+    <dimen name="form_text_size">17sp</dimen>
+    <dimen name="padding_xsmall">5dp</dimen>
+    <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="padding_small">10dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="padding_medium">13dp</dimen>
+    <dimen name="padding_xxlarge">25dp</dimen>
+    <dimen name="padding_default">10dp</dimen>
+    <dimen name="text_size_medium">13sp</dimen>
+    <dimen name="text_size_large">15sp</dimen>
+    <dimen name="text_size_small">9sp</dimen>
+    <dimen name="dialog_header_v_margin">10dp</dimen>
+    <dimen name="dialog_header_h_margin">10dp</dimen>
+    <dimen name="dialog_actions_b_margin">16dp</dimen>
+    <dimen name="dialog_action_btn_h_space">5dp</dimen>
+    <dimen name="dialog_action_btn_v_padding">6dp</dimen>
+    <dimen name="dialog_action_btn_h_padding">30dp</dimen>
+    <dimen name="dialog_blue_edge_height">3dp</dimen>
+
+
+    <dimen name="form_heading">20sp</dimen>
+
+
+    <dimen name="underline_top_spacing">8dp</dimen>
+    <dimen name="underline_bottom_spacing">4dp</dimen>
+    <dimen name="error_label_spacing">12dp</dimen>
+
+    <dimen name="floating_label_top_spacing">4dp</dimen>
+    <dimen name="floating_label_bottom_spacing">8dp</dimen>
+    <dimen name="floating_label_inside_spacing">12dp</dimen>
+
+    <dimen name="right_left_spinner_padding">8dp</dimen>
+
+    <dimen name="label_text_size">12sp</dimen>
+
+    <dimen name="min_content_height">20dp</dimen>
+    <dimen name="padding_large">17dp</dimen>
+    <dimen name="fragment_toolbar_t_margin">16dp</dimen>
+    <dimen name="fragment_toolbar_b_margin">16dp</dimen>
+    <dimen name="fragment_toolbar_l_margin">20dp</dimen>
+    <dimen name="fragment_toolbar_r_margin">16dp</dimen>
+    <dimen name="search_txt_size">18sp</dimen>
+
+    <dimen name="update_user_location_h_padding">16dp</dimen>
+    <dimen name="update_user_location_v_padding">16dp</dimen>
+    <dimen name="update_user_location_item_v_padding">10dp</dimen>
+    <dimen name="update_user_location_hdr1_b_margin">20dp</dimen>
+    <dimen name="update_user_location_item_30dp_margin">25dp</dimen>
+    <dimen name="update_user_location_heading">20sp</dimen>
+    <dimen name="heading">17sp</dimen>
+    <dimen name="otp_text_size">24sp</dimen>
+    <dimen name="heading3">14sp</dimen>
+    <dimen name="heading5">12sp</dimen>
+
+</resources>

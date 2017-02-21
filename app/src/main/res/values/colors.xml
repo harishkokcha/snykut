@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="form_text_color">#145289</color>
+    <color name="fifty_percent_transparency_grey_400">#80bdbdbd</color>
+    <color name="white">#ffffff</color>
+    <color name="darker_grey">#7e7e7c</color>
+    <color name="black">#000000</color>
+    <color name="facebook">#3a5a97</color>
+    <color name="google">#dc4b38</color>
+    <color name="new_text_gray">#3a3a3a</color>
+    <color name="status_bar">#35b2ae</color>
+    <color name="SanyuktText_Blue">#108ae5</color>
+    <color name="Sanyukt_Grey">#858d93</color>
+    <color name="disabled_color">#44000000</color>
+    <color name="error_color">#E7492E</color>
+    <drawable name="facebook_selected">#c6c5c5</drawable>
+    <drawable name="facebook">@color/facebook</drawable>
+    <color name="spinner_base_color">#44000000</color>
+</resources>
