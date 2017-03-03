@@ -65,7 +65,7 @@ public class LoginActivity extends Activity {
                     users.setUserphoneno(userName.getText().toString());
                     users.setUserpassword(userPass.getText().toString());
 
-                    GenericRequest genericRequest = new GenericRequest(Request.Method.POST, AppConstants.USER_LOGIN,
+                    GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
                             ApiResponse.class, users, new Response.Listener<ApiResponse>() {
                         @Override
                         public void onResponse(ApiResponse response) {

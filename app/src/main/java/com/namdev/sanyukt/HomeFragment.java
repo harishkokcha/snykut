@@ -17,7 +17,8 @@ import com.namdev.sanyukt.adapters.HomeFragmentGridAdapter;
 
 public class HomeFragment extends Fragment {
     Context mContext;
-    public static HomeFragment newInstance(){
+
+    public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
 
         return fragment;
@@ -25,7 +26,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onAttach(Context context) {
-        mContext=context;
+        mContext = context;
         super.onAttach(context);
 
     }
@@ -38,19 +39,21 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView=inflater.inflate(R.layout.fragment_home,container,false);
 
-         String [] prgmNameList={"Let Us C","c++","JAVA","Jsp","Microsoft .Net","Android"};
-         int [] prgmImages={R.mipmap.ic_boys,
-                 R.mipmap.ic_girl,
-                 R.drawable.ic_menu_manage,
-                 R.drawable.ic_menu_send,
-                 R.drawable.ic_menu_share,
-                 R.drawable.ic_menu_camera};
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
-        GridView gridview = (GridView)rootView.findViewById(R.id.id_fragment_home_grid_view);
-        gridview.setAdapter(new HomeFragmentGridAdapter(this , prgmNameList,prgmImages));
+        String[] prgmNameList = {"Let Us C", "c++", "JAVA", "Jsp", "Microsoft .Net", "Android"};
+        int[] prgmImages = {R.mipmap.ic_boys,
+                R.mipmap.ic_girl,
+                R.drawable.ic_menu_manage,
+                R.drawable.ic_menu_send,
+                R.drawable.ic_menu_share,
+                R.drawable.ic_menu_camera};
+
+        GridView gridview = (GridView) rootView.findViewById(R.id.id_fragment_home_grid_view);
+        gridview.setAdapter(new HomeFragmentGridAdapter(this, prgmNameList, prgmImages));
 
         return rootView;
+
     }
 }

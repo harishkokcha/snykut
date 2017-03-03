@@ -14,4 +14,5 @@ public class AppConstants {
     public static final String SUCCESS = "success";
     public static long COUNT_DOWN_TIME_OPT=1000*100;
     public static long COUNT_DOWN_TIME_INTERVAL=1000;
+    public static String MemberId="memberId";
 }

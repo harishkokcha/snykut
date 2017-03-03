@@ -51,9 +51,7 @@ public class HomeFragmentGridAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         Holder holder=new Holder();
-        View rowView;
-
-        rowView = inflater.inflate(R.layout.home_fragment_grid_item, null);
+        View rowView = inflater.inflate(R.layout.home_fragment_grid_item, null);
         holder.tv=(TextView) rowView.findViewById(R.id.id_grid_item_text);
         holder.img=(ImageView) rowView.findViewById(R.id.id_grid_item_image);
 
@@ -63,7 +61,6 @@ public class HomeFragmentGridAdapter extends BaseAdapter {
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 Toast.makeText(mActivity, "You Clicked "+mText[position], Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(mActivity, SanyuktListActivity.class);
                 mActivity.startActivity(intent);

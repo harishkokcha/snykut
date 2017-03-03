@@ -11,7 +11,6 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonRequest;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.namdev.sanyukt.beans.ApiResponse;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;

@@ -10,7 +10,7 @@ import android.support.v4.view.ViewPager;
 /**
  * Created by harish on 11/26/2016.
  */
-public class PersonDetails extends FragmentActivity {
+public class PersonDetailsFragment extends FragmentActivity {
 
     private static final int NUM_PAGES = 5;
 

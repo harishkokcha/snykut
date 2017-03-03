@@ -21,7 +21,10 @@
             android:name=".SanyuktListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PersonDetails"
+            android:name=".SanyuktMemberDetails"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PersonDetailsFragment"
             android:screenOrientation="portrait" />
         <activity
             android:name=".RegisterationActivity"

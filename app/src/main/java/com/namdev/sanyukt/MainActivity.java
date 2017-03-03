@@ -106,10 +106,10 @@ public class MainActivity extends AppCompatActivity
                 fragmentClass = AddPersonFragment.class;
                 break;
             case R.id.nav_my_family:
-                fragmentClass = HomeFragment.class;
+                fragmentClass = MyFamilyFragment.class;
                 break;
             case R.id.nav_my_fav:
-                fragmentClass = HomeFragment.class;
+                fragmentClass = MyFavoriteFragment.class;
                 break;
             case R.id.nav_share:
                 fragmentClass = HomeFragment.class;

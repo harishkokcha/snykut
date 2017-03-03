@@ -110,7 +110,7 @@ public class AddPersonFragment extends Fragment {
                 Users users=AppPreferences.getInstance().getUser(mActivity);
                 member.setMemberUserId(users.getUserid());
                 Log.d("Harish"," Member Details "+new Gson().toJson(member));
-                GenericRequest genericRequest = new GenericRequest(Request.Method.POST, AppConstants.USER_LOGIN,
+                GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
                         ApiResponse.class, member, new Response.Listener<ApiResponse>() {
                     @Override
                     public void onResponse(ApiResponse response) {

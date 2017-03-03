@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.namdev.sanyukt.R;
 import com.namdev.sanyukt.SanyuktMemberDetails;
+import com.namdev.sanyukt.beans.AppConstants;
 import com.namdev.sanyukt.beans.Member;
 
 import java.util.List;
@@ -103,7 +104,7 @@ public class SanyuktListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         TextView textView;
         MemberViewHolder(View itemView) {
             super(itemView);
-            textView=(TextView)itemView.findViewById(R.id.date);
+            textView=(TextView)itemView.findViewById(R.id.id_sanyukt_list_member_date);
             itemView.setOnClickListener(this);
         }
 
@@ -112,6 +113,7 @@ public class SanyuktListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             if (v == itemView) {
                 Log.d("Harish", "Item Clicked mActivity" + mActivity);
                 Intent intent = new Intent(mActivity, SanyuktMemberDetails.class);
+                intent.putExtra(AppConstants.MemberId,mMemberList.get(getAdapterPosition()).getMemberId());
                 mActivity.startActivity(intent);
             }
         }
