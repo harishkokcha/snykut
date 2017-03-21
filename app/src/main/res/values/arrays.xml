@@ -116,25 +116,62 @@
         <item>Donot wish to specify</item>
 
     </string-array>
-    <string-array name="family_value_array" >
+    <string-array name="family_value_array">
         <item>Family Value</item>
         <item>Orthodox</item>
         <item>Traditional</item>
         <item>Moderate</item>
         <item>libreal</item>
     </string-array>
-    <string-array name="family_type_array" >
+    <string-array name="family_type_array">
         <item>Family Type</item>
         <item>Joint Family</item>
         <item>Nuclear Family</item>
         <item>Others</item>
     </string-array>
-    <string-array name="family_status_array" >
+    <string-array name="family_status_array">
         <item>Family Status</item>
         <item>Middle classs</item>
         <item>Upper-middle class</item>
         <item>Rich</item>
         <item>Affluent</item>
+    </string-array>
+    <string-array name="height_array">
+        <item>Height</item>
+        <item>Below 4ft 5in</item>
+        <item>4ft 5in</item>
+        <item>4ft 6in</item>
+        <item>4ft 7in</item>
+        <item>4ft 8in</item>
+        <item>4ft 9in</item>
+        <item>4ft 10in</item>
+        <item>4ft 11in</item>
+        <item>5ft</item>
+        <item>5ft 1in</item>
+        <item>5ft 2in</item>
+        <item>5ft 3in</item>
+        <item>5ft 4in</item>
+        <item>5ft 5in</item>
+        <item>5ft 6in</item>
+        <item>5ft 7in</item>
+        <item>5ft 8in</item>
+        <item>5ft 9in</item>
+        <item>5ft 10in</item>
+        <item>5ft 11in</item>
+        <item>6ft</item>
+        <item>6ft 1in</item>
+        <item>6ft 2in</item>
+        <item>6ft 3in</item>
+        <item>6ft 4in</item>
+        <item>6ft 5in</item>
+        <item>6ft 6in</item>
+        <item>6ft 7in</item>
+        <item>6ft 8in</item>
+        <item>6ft 9in</item>
+        <item>6ft 10in</item>
+        <item>6ft 11in</item>
+        <item>7ft</item>
+        <item>above 7ft</item>
     </string-array>
 
 </resources>

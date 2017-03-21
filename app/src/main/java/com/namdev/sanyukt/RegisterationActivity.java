@@ -71,8 +71,7 @@ public class RegisterationActivity extends Activity {
                     users.setUserphoneno(phoneEditText.getText().toString());
                     users.setUsername(nameEditText.getText().toString());
                     users.setUserpassword(passwordEditText.getText().toString());
-                    setUpMobileVerificationDialog(mActivity);
-                    GenericRequest genericRequest = new GenericRequest(Request.Method.POST, AppConstants.USER_LOGIN,
+                    GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.NEW_USER_REGISTRATION_URL,
                             ApiResponse.class, users, new Response.Listener<ApiResponse>() {
                         @Override
                         public void onResponse(ApiResponse response) {
@@ -167,7 +166,7 @@ public class RegisterationActivity extends Activity {
                     mobileVerifiedActionBtn.setBackgroundColor(mCommonUtils.getColorInt(R.color.darker_grey, mActivity));
                     userPhoneVerification.setUserID("23425");
                     userPhoneVerification.setOtp(otpNumber);
-                    GenericRequest genericRequest = new GenericRequest(Request.Method.POST, AppConstants.USER_LOGIN,
+                    GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
                             ApiResponse.class, userPhoneVerification, new Response.Listener<ApiResponse>() {
                         @Override
                         public void onResponse(ApiResponse response) {

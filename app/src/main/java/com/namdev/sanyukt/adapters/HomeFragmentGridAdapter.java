@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.namdev.sanyukt.HomeFragment;
 import com.namdev.sanyukt.R;
 import com.namdev.sanyukt.SanyuktListActivity;
+import com.namdev.sanyukt.beans.AppConstants;
 
 /**
  * Created by Harish on 11/16/2016.
@@ -63,15 +64,18 @@ public class HomeFragmentGridAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Toast.makeText(mActivity, "You Clicked "+mText[position], Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(mActivity, SanyuktListActivity.class);
+                intent.putExtra(AppConstants.GENDER,position);
                 mActivity.startActivity(intent);
             }
         });
 
         return rowView;
     }
+
     private class Holder
     {
         TextView tv;
         ImageView img;
     }
+
 }

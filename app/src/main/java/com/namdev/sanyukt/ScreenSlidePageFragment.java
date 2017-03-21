@@ -1,15 +1,12 @@
 package com.namdev.sanyukt;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
+import android.widget.ImageView;
 
 public class ScreenSlidePageFragment extends Fragment {
     /**
@@ -47,8 +44,7 @@ public class ScreenSlidePageFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout containing a title and body text.
         ViewGroup rootView = (ViewGroup) inflater
-                .inflate(R.layout.fragment_person_details_slide_page, container, false);
-
+                .inflate(R.layout.advertise_slide_item, container, false);
 
 
         return rootView;

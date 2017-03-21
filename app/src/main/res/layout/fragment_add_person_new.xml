@@ -1,17 +1,488 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_profile_form_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/AirQ_White"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--<LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="Add new Member"
-        android:id="@+id/id_fragment_new_member_add"
-        android:includeFontPadding="false"
-        android:gravity="center"
-        android:padding="15dp"
-        android:background="@drawable/background_app_button"
-        android:layout_centerInParent="true"/>
-</RelativeLayout>
+        android:background="@color/AirQ_White"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/profile_form_item_l_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.namdev.sanyukt.views.CustomTextView
+                android:id="@+id/id_profile_form_user_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingRight="@dimen/profile_form_item_icon_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ImageView
+                android:id="@+id/id_profile_form_user_edit_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingEnd="@dimen/profile_form_item_r_margin"
+                android:paddingRight="@dimen/profile_form_item_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_pencil_lite"
+                android:visibility="gone" />
+
+            <AutoCompleteTextView
+                android:id="@+id/id_profile_form_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/id_profile_form_user_icon"
+                android:layout_toLeftOf="@+id/id_profile_form_user_edit_icon"
+                android:layout_toRightOf="@+id/id_profile_form_user_icon"
+                android:background="@android:color/transparent"
+                android:hint="@string/profile_name_hint"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName|textCapSentences|textNoSuggestions"
+                android:maxLength="@integer/name_maxlength"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/AirQText_DGray"
+                android:textSize="@dimen/heading1" />
+
+            <EditText
+                android:id="@+id/id_profile_form_user_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/id_profile_form_user_icon"
+                android:layout_toLeftOf="@+id/id_profile_form_user_edit_icon"
+                android:layout_toRightOf="@+id/id_profile_form_user_icon"
+                android:background="@android:color/transparent"
+                android:hint="@string/profile_name_hint"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName|textCapSentences|textNoSuggestions"
+                android:maxLength="@integer/name_maxlength"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/AirQText_DGray"
+                android:textSize="@dimen/heading1"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/id_profile_form_divider5"
+            layout="@layout/lightdivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/id_profile_form_phone_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingRight="@dimen/profile_form_item_icon_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_contactus" />
+
+            <ImageView
+                android:id="@+id/id_profile_form_phone_edit_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingEnd="@dimen/profile_form_item_r_margin"
+                android:paddingRight="@dimen/profile_form_item_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_pencil_lite"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/id_profile_form_phone_cnty_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/id_profile_form_phone_icon"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:text="+91 "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/AirQText_DGray"
+                android:textSize="@dimen/heading1" />
+
+            <EditText
+                android:id="@+id/id_profile_form_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/id_profile_form_phone_cnty_code"
+                android:layout_toLeftOf="@id/id_profile_form_phone_edit_icon"
+                android:layout_toRightOf="@id/id_profile_form_phone_cnty_code"
+                android:layout_toStartOf="@id/id_profile_form_phone_edit_icon"
+                android:background="@android:color/transparent"
+                android:hint="@string/profile_phone_hint"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:maxLength="@integer/phone_maxlength"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/AirQText_DGray"
+                android:textSize="@dimen/heading1" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/id_profile_form_relation_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/id_profile_form_divider6"
+                layout="@layout/lightdivider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/id_profile_form_relation_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingEnd="@dimen/profile_form_item_icon_r_margin"
+                android:paddingRight="@dimen/profile_form_item_icon_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_relation_grey"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ImageView
+                android:id="@+id/id_profile_form_relation_edit_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingEnd="@dimen/profile_form_item_r_margin"
+                android:paddingRight="@dimen/profile_form_item_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_pencil_lite"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/id_profile_form_relation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/id_profile_form_relation_icon"
+                android:layout_toLeftOf="@+id/id_profile_form_relation_edit_icon"
+                android:layout_toRightOf="@+id/id_profile_form_relation_icon"
+                android:background="@android:color/transparent"
+                android:hint="@string/profile_form_relation_hint"
+                android:imeOptions="actionNext"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/AirQText_DGray"
+                android:textSize="@dimen/heading1" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/id_profile_form_people_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <include
+                android:id="@+id/id_profile_form_divider7"
+                layout="@layout/lightdivider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/id_profile_form_people_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingEnd="@dimen/profile_form_item_icon_r_margin"
+                android:paddingRight="@dimen/profile_form_item_icon_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_account_group"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ImageView
+                android:id="@+id/id_profile_form_people_edit_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingEnd="@dimen/profile_form_item_r_margin"
+                android:paddingRight="@dimen/profile_form_item_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_pencil_lite"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/id_profile_form_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/id_profile_form_people_icon"
+                android:layout_toLeftOf="@+id/id_profile_form_people_edit_icon"
+                android:layout_toRightOf="@+id/id_profile_form_people_icon"
+                android:background="@android:color/transparent"
+                android:hint="@string/profile_form_people_hint"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="@integer/people_maxlength"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/AirQText_DGray"
+                android:textSize="@dimen/heading1" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/id_profile_form_divider3"
+            layout="@layout/lightdivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/id_profile_form_email_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingEnd="@dimen/profile_form_item_icon_r_margin"
+                android:paddingRight="@dimen/profile_form_item_icon_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_email" />
+
+            <ImageView
+                android:id="@+id/id_profile_form_email_edit_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingEnd="@dimen/profile_form_item_r_margin"
+                android:paddingRight="@dimen/profile_form_item_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_pencil_lite"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/id_profile_form_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@id/id_profile_form_email_edit_icon"
+                android:layout_toRightOf="@id/id_profile_form_email_icon"
+                android:background="@android:color/transparent"
+                android:hint="@string/profile_email_hint"
+                android:inputType="textEmailAddress"
+                android:maxLength="@integer/email_maxlength"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/AirQText_DGray"
+                android:textSize="@dimen/heading1" />
+        </RelativeLayout>
+
+
+        <include
+            android:id="@+id/id_profile_form_divider2"
+            layout="@layout/lightdivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/id_profile_form_location_city_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/id_profile_form_locality_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:paddingBottom="@dimen/profile_form_item_v_padding"
+                android:paddingRight="@dimen/profile_form_item_icon_r_margin"
+                android:paddingTop="@dimen/profile_form_item_v_padding"
+                android:src="@drawable/ic_location_grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/id_profile_form_locality_edit_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingBottom="@dimen/profile_form_item_v_padding"
+                        android:paddingEnd="@dimen/profile_form_item_r_margin"
+                        android:paddingRight="@dimen/profile_form_item_r_margin"
+                        android:paddingTop="@dimen/profile_form_item_v_padding"
+                        android:src="@drawable/ic_pencil_lite"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/id_profile_form_locality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:digits="qwertzuiopasdfghjklyxcvbnm,QWERTYUIOPASDFGHJKLZXCVBNM1234567890-_#.():@, "
+                        android:hint="@string/profile_form_locality_hint"
+                        android:inputType="text|textCapSentences|textNoSuggestions"
+                        android:maxLength="@integer/area_maxlength"
+                        android:paddingBottom="@dimen/profile_form_item_v_padding"
+                        android:paddingTop="@dimen/profile_form_item_v_padding"
+                        android:singleLine="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/AirQText_DGray"
+                        android:textSize="@dimen/heading1" />
+                </RelativeLayout>
+
+                <include
+                    android:id="@+id/id_profile_form_divider3"
+                    layout="@layout/lightdivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:id="@+id/id_profile_form_city_edit_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingBottom="@dimen/profile_form_item_v_padding"
+                        android:paddingEnd="@dimen/profile_form_item_r_margin"
+                        android:paddingRight="@dimen/profile_form_item_r_margin"
+                        android:paddingTop="@dimen/profile_form_item_v_padding"
+                        android:src="@drawable/ic_pencil_lite"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/id_profile_form_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:digits="qwertzuiopasdfghjklyxcvbnm,QWERTYUIOPASDFGHJKLZXCVBNM"
+                        android:hint="@string/profile_form_city_hint"
+                        android:inputType="text|textCapSentences|textNoSuggestions"
+                        android:maxLength="@integer/city_maxlength"
+                        android:paddingBottom="@dimen/profile_form_item_v_padding"
+                        android:paddingTop="@dimen/profile_form_item_v_padding"
+                        android:singleLine="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/AirQText_DGray"
+                        android:textSize="@dimen/heading1" />
+
+                </RelativeLayout>
+
+                <include
+                    android:id="@+id/id_profile_form_divider4"
+                    layout="@layout/lightdivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/id_profile_form_cntry_edit_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingBottom="@dimen/profile_form_item_v_padding"
+                        android:paddingEnd="@dimen/profile_form_item_r_margin"
+                        android:paddingRight="@dimen/profile_form_item_r_margin"
+                        android:paddingTop="@dimen/profile_form_item_v_padding"
+                        android:src="@drawable/ic_pencil_lite"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/id_profile_form_cntry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:digits="qwertzuiopasdfghjklyxcvbnm,QWERTYUIOPASDFGHJKLZXCVBNM"
+                        android:hint="@string/profile_form_cntry_hint"
+                        android:inputType="text|textCapSentences|textNoSuggestions"
+                        android:maxLength="@integer/country_maxlength"
+                        android:paddingTop="@dimen/profile_form_item_v_padding"
+                        android:singleLine="true"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/AirQText_DGray"
+                        android:textSize="@dimen/heading1" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>-->
+</LinearLayout>

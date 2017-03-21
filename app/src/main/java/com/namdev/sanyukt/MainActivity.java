@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mActivity = MainActivity.this;
-        BeanManager beanManager=BeanManager.getInstance();
+        BeanManager beanManager = BeanManager.getInstance();
         beanManager.setMembers(new Member());
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_logout:
                 fragmentClass = HomeFragment.class;
-                Intent intent=new Intent(mActivity,LoginActivity.class);
+                Intent intent = new Intent(mActivity, LoginActivity.class);
                 startActivity(intent);
                 finish();
                 break;

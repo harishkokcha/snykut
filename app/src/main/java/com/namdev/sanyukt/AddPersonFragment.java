@@ -1,25 +1,21 @@
 package com.namdev.sanyukt;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,17 +26,15 @@ import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 import com.namdev.sanyukt.beans.ApiResponse;
 import com.namdev.sanyukt.beans.AppConstants;
-import com.namdev.sanyukt.beans.BeanManager;
 import com.namdev.sanyukt.beans.Member;
 import com.namdev.sanyukt.beans.Users;
 import com.namdev.sanyukt.utils.AppController;
 import com.namdev.sanyukt.utils.AppPreferences;
-import com.namdev.sanyukt.utils.CommonUtils;
 import com.namdev.sanyukt.utils.GenericRequest;
 import com.namdev.sanyukt.views.MaterialSpinner;
-import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Harish on 11/21/2016.
@@ -49,7 +43,10 @@ public class AddPersonFragment extends Fragment {
     Context mContext;
     Member member;
     private Activity mActivity;
-    private CommonUtils commonUtils;
+    private Calendar presentCalender;
+    private Calendar selectedCalendar;
+    private DatePickerDialog datePickerDialog;
+    private EditText dob;
 
     public static AddPersonFragment newInstance() {
         return new AddPersonFragment();
@@ -64,20 +61,24 @@ public class AddPersonFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        commonUtils = new CommonUtils();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_add_person, container, false);
-        BeanManager beanManager = BeanManager.getInstance();
-        //member = (Member) beanManager.getMembers();
+        mActivity = getActivity();
+        presentCalender = Calendar.getInstance();
+        presentCalender.add(Calendar.DAY_OF_MONTH, 0);
+
+        selectedCalendar = Calendar.getInstance();
+        selectedCalendar.set(Calendar.DAY_OF_MONTH, presentCalender.get(Calendar.DAY_OF_MONTH));
+        selectedCalendar.set(Calendar.MONTH, presentCalender.get(Calendar.MONTH));
+        selectedCalendar.set(Calendar.YEAR, presentCalender.get(Calendar.YEAR));
 
         member = new Member();
-        mActivity = getActivity();
         ProfileForSpinner(rootView);
-        GenderSpinner(rootView);
+        //GenderSpinner(rootView);
         ManglikSpinner(rootView);
         BodyTypeSpinner(rootView);
         BodyComplexionSpinner(rootView);
@@ -86,30 +87,73 @@ public class AddPersonFragment extends Fragment {
         PhysicalStatusSpinner(rootView);
         EmployementSpinner(rootView);
         AnnualIncomeSpinner(rootView);
+        MotherOcupationSpinner(rootView);
+        FatherOcupationSpinner(rootView);
+        HeightSpinner(rootView);
+
         final EditText height = (EditText) rootView.findViewById(R.id.id_input_height);
         final EditText weight = (EditText) rootView.findViewById(R.id.id_input_weight);
         final EditText name = (EditText) rootView.findViewById(R.id.id_input_name);
-        final EditText dob = (EditText) rootView.findViewById(R.id.id_input_dob);
-
+        dob = (EditText) rootView.findViewById(R.id.id_input_dob);
+        dob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePickerDialog.show();
+            }
+        });
+        final RadioGroup genderRadioGroup = (RadioGroup) rootView.findViewById(R.id.rdg_gender);
         final EditText education = (EditText) rootView.findViewById(R.id.id_input_education);
         final EditText hEducation = (EditText) rootView.findViewById(R.id.id_input_education_heigher);
         final EditText empDetails = (EditText) rootView.findViewById(R.id.id_input_employement_details);
         final EditText city = (EditText) rootView.findViewById(R.id.id_input_city);
         final EditText state = (EditText) rootView.findViewById(R.id.id_input_state);
+        final EditText fName = (EditText) rootView.findViewById(R.id.id_input_father_name);
+        final EditText mName = (EditText) rootView.findViewById(R.id.id_input_mother_name);
+        final EditText mGotra = (EditText) rootView.findViewById(R.id.id_input_mother_gotra);
+        final EditText fGotra = (EditText) rootView.findViewById(R.id.id_input_father_gotra);
+
         TextView submit = (TextView) rootView.findViewById(R.id.id_fragment_new_member_submit);
 
+        initDateTimePicker(21);
+
+        genderRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                Log.d("Harish", " onCheckedChanged " + group.getCheckedRadioButtonId() + " checkedId " + checkedId);
+                if (genderRadioGroup.getCheckedRadioButtonId() == R.id.radioMale) {
+                    initDateTimePicker(21);
+                } else {
+                    initDateTimePicker(18);
+                }
+
+            }
+        });
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 member.setMemberName(name.getText().toString());
                 member.setMemberDob(dob.getText().toString());
                 member.setMamberCity(city.getText().toString());
                 member.setMamberState(state.getText().toString());
                 member.setMamberEducation(education.getText().toString());
                 member.setMamberEmployeeDetails(empDetails.getText().toString());
-                Users users=AppPreferences.getInstance().getUser(mActivity);
+                member.setMamberFatherName(fName.getText().toString());
+                member.setMamberFatherGotra(fGotra.getText().toString());
+                member.setMamberMotherName(mName.getText().toString());
+                member.setMamberMotherGotra(mGotra.getText().toString());
+                member.setMamberEducationHigher(hEducation.getText().toString());
+                //member.setMamberHeight(height.getText().toString());
+                member.setMamberWeight(weight.getText().toString());
+                if (genderRadioGroup.getCheckedRadioButtonId() == R.id.radioMale) {
+                    member.setMamberGender("M");
+                } else {
+                    member.setMamberGender("F");
+                }
+
+                Users users = AppPreferences.getInstance().getUser(mActivity);
                 member.setMemberUserId(users.getUserid());
-                Log.d("Harish"," Member Details "+new Gson().toJson(member));
+                Log.d("Harish", " Member Details " + new Gson().toJson(member));
                 GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
                         ApiResponse.class, member, new Response.Listener<ApiResponse>() {
                     @Override
@@ -117,7 +161,7 @@ public class AddPersonFragment extends Fragment {
                         if (response.getData().equals(AppConstants.SUCCESS)) {
                             Member member = new Gson().fromJson(response.getData(), Member.class);
                             if (member.getMemberId() != null) {
-                                Toast.makeText(mActivity,"member Added successfully",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mActivity, "member Added successfully", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
@@ -133,33 +177,42 @@ public class AddPersonFragment extends Fragment {
             }
         });
 
-        dob.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar now = Calendar.getInstance();
-                DatePickerDialog dpd = DatePickerDialog.newInstance(
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-                                String date = dayOfMonth + "/" + (++monthOfYear) + "/" + year;
-                                date = commonUtils.getDateTimeFromString(date, "dd/MM/yyyy", "d MMM yyyy");
-                                dob.setText(date);
-                            }
-                        },
-                        now.get(Calendar.YEAR),
-                        now.get(Calendar.MONTH),
-                        now.get(Calendar.DAY_OF_MONTH)
-                );
-                /*dpd.setMinDate(now);
-                Log.d("Calender","MinDate : "+now);*/
-                now = Calendar.getInstance();
-                //now.add(Calendar.MONTH,6);
-                dpd.setMaxDate(now);
-                dpd.setAccentColor(ContextCompat.getColor(mActivity, R.color.colorPrimary));
-                dpd.show(mActivity.getFragmentManager(), "Datepickerdialog");
-            }
-        });
         return rootView;
+    }
+
+    private void initDateTimePicker(int yrs) {
+        datePickerDialog = new DatePickerDialog(mActivity, dpickerListener, presentCalender.get(Calendar.YEAR), presentCalender.get(Calendar.MONTH),
+                presentCalender.get(Calendar.DAY_OF_MONTH));
+        Calendar maxCalender = Calendar.getInstance();
+        maxCalender.add(Calendar.YEAR, -yrs);
+        datePickerDialog.getDatePicker().setMaxDate(maxCalender.getTimeInMillis());
+    }
+
+    private DatePickerDialog.OnDateSetListener dpickerListener = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+            selectedCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            selectedCalendar.set(Calendar.MONTH, monthOfYear);
+            selectedCalendar.set(Calendar.YEAR, year);
+
+            Date presentDate = presentCalender.getTime();
+            Date selectedDate = selectedCalendar.getTime();
+            Log.d("Harish", "selectedCalendar : " + selectedCalendar.get(Calendar.DAY_OF_MONTH) + "/" + (selectedCalendar.get(Calendar.MONTH) + 1) + "/" + selectedCalendar.get(Calendar.YEAR));
+            Log.d("Harish", "selectedCalendar AGE : " + getAgeFromDate());
+            dob.setText(selectedCalendar.get(Calendar.DAY_OF_MONTH) + "/" + (selectedCalendar.get(Calendar.MONTH) + 1) + "/" + selectedCalendar.get(Calendar.YEAR));
+
+        }
+    };
+
+    private int getAgeFromDate() {
+
+        if (selectedCalendar.getTime().after(presentCalender.getTime())) {
+            return -1;
+        } else {
+            return presentCalender.get(Calendar.YEAR) - selectedCalendar.get(Calendar.YEAR);
+        }
     }
 
     private void AnnualIncomeSpinner(View rootView) {
@@ -194,6 +247,26 @@ public class AddPersonFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 member.setMamberDrinkingHabbit(array[position]);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
+
+    private void HeightSpinner(View rootView) {
+        Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_height_type);
+        final String array[] = getResources().getStringArray(R.array.height_array);
+        ArrayAdapter<CharSequence> profileForAdapter = ArrayAdapter.createFromResource(mContext,
+                R.array.height_array, android.R.layout.simple_spinner_item);
+        profileForAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(profileForAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                member.setMamberHeight(array[position]);
             }
 
             @Override

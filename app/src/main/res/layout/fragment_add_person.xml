@@ -13,14 +13,34 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingBottom="@dimen/padding_xsmall"
-            android:paddingTop="@dimen/padding_xsmall">
+            android:paddingTop="@dimen/padding_xsmall"
+            android:weightSum="1">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:layout_weight=".6">
+
+                <EditText
+                    android:id="@+id/id_input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="@string/hint_name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/Sanyukt_Grey" />
+            </android.support.design.widget.TextInputLayout>
 
             <com.namdev.sanyukt.views.MaterialSpinner
                 android:id="@+id/id_input_profile_for"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight=".4"
                 android:spinnerMode="dropdown"
                 app:ms_arrowColor="@color/disabled_color"
                 app:ms_arrowSize="16dp"
@@ -29,20 +49,6 @@
 
         </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/id_input_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:hint="@string/hint_name"
-                android:inputType="text"
-                android:maxLines="1" />
-        </android.support.design.widget.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,6 +71,30 @@
                                 android:maxLines="1" />
                         </android.support.design.widget.TextInputLayout>-->
 
+            <RadioGroup
+                android:id="@+id/rdg_gender"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female" />
+
+            </RadioGroup>
+
+
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/input_layout_dob"
@@ -82,32 +112,21 @@
                     android:gravity="center"
                     android:hint="@string/hint_dob" />
             </android.support.design.widget.TextInputLayout>
-
-            <com.namdev.sanyukt.views.MaterialSpinner
-                android:id="@+id/id_input_manglik"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:ms_arrowColor="@color/disabled_color"
-                app:ms_arrowSize="16dp"
-                app:ms_floatingLabelText="Manglik"
-                app:ms_multiline="true" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
             <com.namdev.sanyukt.views.MaterialSpinner
-                android:id="@+id/id_input_profile_gender"
+                android:id="@+id/id_input_manglik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:paddingLeft="2dp"
+                android:layout_marginRight="12dp"
+                android:layout_weight=".4"
                 app:ms_arrowColor="@color/disabled_color"
                 app:ms_arrowSize="16dp"
-                app:ms_floatingLabelText="Gender"
+                app:ms_floatingLabelText="Manglik"
                 app:ms_multiline="true" />
 
             <com.namdev.sanyukt.views.MaterialSpinner
@@ -121,12 +140,13 @@
                 app:ms_multiline="true" />
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:baselineAligned="false"
             android:orientation="horizontal">
-
+<!--
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/input_layout_height"
                 android:layout_width="0dp"
@@ -142,7 +162,18 @@
                     android:inputType="number"
                     android:maxLength="3"
                     android:maxLines="1" />
-            </android.support.design.widget.TextInputLayout>
+            </android.support.design.widget.TextInputLayout>-->
+
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_height_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:layout_weight="1"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Height"
+                app:ms_multiline="true" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/input_layout_weight"
@@ -170,6 +201,7 @@
                 android:id="@+id/id_input_body_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
                 android:layout_weight=".5"
                 app:ms_arrowColor="@color/disabled_color"
                 app:ms_arrowSize="16dp"
@@ -195,6 +227,7 @@
                 android:id="@+id/id_input_marital_satus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
                 android:layout_weight=".5"
                 app:ms_arrowColor="@color/disabled_color"
                 app:ms_arrowSize="16dp"
@@ -212,46 +245,66 @@
                 app:ms_multiline="true" />
         </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4">
+
+                <EditText
+                    android:id="@+id/id_input_education"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Education" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4">
+
+                <EditText
+                    android:id="@+id/id_input_education_heigher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Higher Education" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/id_input_education"
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_employement_in"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Education" />
+                android:layout_marginRight="12dp"
+                android:layout_weight=".4"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Employement In"
+                app:ms_multiline="true" />
 
-        </android.support.design.widget.TextInputLayout>
-        <!--<com.namdev.sanyukt.views.MaterialSpinner
-            android:id="@+id/id_input_education_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ms_arrowColor="@color/disabled_color"
-            app:ms_arrowSize="16dp"
-            app:ms_floatingLabelText="Education Details"
-            app:ms_multiline="true" />
--->
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/id_input_education_heigher"
+            <com.namdev.sanyukt.views.MaterialSpinner
+                android:id="@+id/id_input_annual_income"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Higher Education" />
+                android:layout_weight=".4"
+                app:ms_arrowColor="@color/disabled_color"
+                app:ms_arrowSize="16dp"
+                app:ms_floatingLabelText="Annual Income"
+                app:ms_multiline="true" />
 
-        </android.support.design.widget.TextInputLayout>
-
-        <com.namdev.sanyukt.views.MaterialSpinner
-            android:id="@+id/id_input_employement_in"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ms_arrowColor="@color/disabled_color"
-            app:ms_arrowSize="16dp"
-            app:ms_floatingLabelText="Employement In"
-            app:ms_multiline="true" />
+        </LinearLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -265,48 +318,113 @@
 
         </android.support.design.widget.TextInputLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/id_input_father_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4"
+                android:hint="Father Name" />
+
+
+            <EditText
+                android:id="@+id/id_input_father_gotra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4"
+                android:hint="Father Gotra" />
+
+        </LinearLayout>
+
         <com.namdev.sanyukt.views.MaterialSpinner
-            android:id="@+id/id_input_annual_income"
+            android:id="@+id/id_input_father_occupation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:ms_arrowColor="@color/disabled_color"
             app:ms_arrowSize="16dp"
-            app:ms_floatingLabelText="Employement In"
+            app:ms_floatingLabelText="Father Occupation"
             app:ms_multiline="true" />
 
-        <android.support.design.widget.TextInputLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/id_input_city"
+                android:id="@+id/id_input_mother_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="city" />
+                android:layout_weight=".4"
+                android:hint="Mother Name" />
 
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/id_input_state"
+                android:id="@+id/id_input_mother_gotra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="State" />
+                android:layout_weight=".4"
+                android:hint="Mother Gotra" />
 
-        </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <com.namdev.sanyukt.views.MaterialSpinner
+            android:id="@+id/id_input_mother_occupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ms_arrowColor="@color/disabled_color"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelText="Mother Occupation"
+            app:ms_multiline="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4">
+
+                <EditText
+                    android:id="@+id/id_input_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="State" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4">
+
+                <EditText
+                    android:id="@+id/id_input_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="city" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
 
         <TextView
+            android:id="@+id/id_fragment_new_member_submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Submit"
-            android:id="@+id/id_fragment_new_member_submit"
-            android:includeFontPadding="false"
+            android:background="@drawable/background_app_button"
             android:gravity="center"
+            android:includeFontPadding="false"
             android:padding="15dp"
-            android:background="@drawable/background_app_button" />
+            android:text="Submit" />
     </LinearLayout>
 </ScrollView>

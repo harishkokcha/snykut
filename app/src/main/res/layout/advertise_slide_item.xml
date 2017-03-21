@@ -4,8 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/id_fragment_recycle_list_view"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
 </LinearLayout>

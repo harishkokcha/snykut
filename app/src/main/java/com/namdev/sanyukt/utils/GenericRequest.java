@@ -46,8 +46,8 @@ public class GenericRequest<T> extends JsonRequest<T> {
                            Response.Listener<T> listener, Response.ErrorListener errorListener, Map<String, String> headers) {
         super(method, url, requestBody, listener,
                 errorListener);
-        Log.d("GenricRequest","Request url :"+url);
-        Log.d("GenricRequest","Request requestBody :"+requestBody);
+        Log.d("GenricRequest", "Request url :" + url);
+        Log.d("GenricRequest", "Request requestBody :" + requestBody);
         clazz = classtype;
         this.headers = headers;
         configureRequest();
@@ -185,8 +185,6 @@ public class GenericRequest<T> extends JsonRequest<T> {
     }
 
 
-
-
     @Override
     protected Response<T> parseNetworkResponse(NetworkResponse response) {
         // The magic of the mute request happens here
@@ -199,7 +197,7 @@ public class GenericRequest<T> extends JsonRequest<T> {
             try {
                 // If it's not muted; we just need to create our POJO from the returned JSON and handle correctly the errors
                 String json = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
-                Log.d("GenricRequest","Result json :"+json);
+                Log.d("GenricRequest", "Result json :" + json);
                 T parsedObject = gson.fromJson(json, clazz);
                 return Response.success(parsedObject, HttpHeaderParser.parseCacheHeaders(response));
             } catch (UnsupportedEncodingException e) {

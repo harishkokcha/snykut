@@ -49,6 +49,24 @@ public class Member {
     public String mamberState;
     public String mamberAddress;
     public String mamberAboutMe;
+    public int pageNumber;
+    public int perPageData;
+
+    public int getPerPageData() {
+        return perPageData;
+    }
+
+    public void setPerPageData(int perPageData) {
+        this.perPageData = perPageData;
+    }
+
+    public int getPageNumber() {
+        return pageNumber;
+    }
+
+    public void setPageNumber(int pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
 
     public String getMemberUserId() {

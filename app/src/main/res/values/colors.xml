@@ -19,4 +19,26 @@
     <drawable name="facebook_selected">#c6c5c5</drawable>
     <drawable name="facebook">@color/facebook</drawable>
     <color name="spinner_base_color">#44000000</color>
+
+
+    <color name="AirQ_Grey">#858d93</color>
+    <color name="AirQ_Blue">#108ae5</color>
+    <color name="AirQ_White">#FFFFFF</color>
+    <color name="AirQ_DGray">#46494b</color>
+    <color name="AirQText_DGray">#46494b</color>
+    <color name="AirQText_Blue">#108ae5</color>
+    <color name="AirQText_Gray">#858d93</color>
+    <color name="AirQText_Green">#159303</color>
+    <color name="AirQ_Green">#159303</color>
+    <color name="AirQ_Primary_Dark">#166cad</color>
+    <color name="AirQ_Primary">#108ae5</color>
+    <color name="AirQToolbar_Bg">#edeeee</color>
+    <color name="listitemactionbtn_Bg">#286090</color>
+    <color name="showcase_blue">#AA000000</color>
+    <color name="showcase_gotit">#00FFFF</color>
+
+    <color name="cart_item_bg">#0FB14A</color>
+    <color name="colorTransB">#99000000</color>
+    <color name="cart_item_submit_btn_bg">#099E44</color>
+
 </resources>

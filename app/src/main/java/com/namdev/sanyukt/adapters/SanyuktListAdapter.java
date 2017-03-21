@@ -18,7 +18,8 @@ import com.namdev.sanyukt.beans.Member;
 
 import java.util.List;
 
-/**s
+/**
+ * s
  * Created by Harish on 11/16/2016.
  */
 public class SanyuktListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -37,7 +38,7 @@ public class SanyuktListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public SanyuktListAdapter(Activity context, RecyclerView mRecyclerView, List<Member> memberList) {
         this.mActivity = context;
         Log.d("Harish", "Item SanyuktListAdapter mActivity" + mActivity);
-        mMemberList=memberList;
+        mMemberList = memberList;
         final LinearLayoutManager linearLayoutManager = (LinearLayoutManager) mRecyclerView.getLayoutManager();
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -63,7 +64,7 @@ public class SanyuktListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public int getItemViewType(int position) {
-        Log.d("harish","mMemberList.get(position) == null :"+(mMemberList.get(position) == null));
+        Log.d("harish", "mMemberList.get(position) == null :" + (mMemberList.get(position) == null));
         return mMemberList.get(position) == null ? VIEW_TYPE_LOADING : VIEW_TYPE_ITEM;
     }
 
@@ -102,9 +103,10 @@ public class SanyuktListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private class MemberViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView textView;
+
         MemberViewHolder(View itemView) {
             super(itemView);
-            textView=(TextView)itemView.findViewById(R.id.id_sanyukt_list_member_date);
+            textView = (TextView) itemView.findViewById(R.id.id_sanyukt_list_member_date);
             itemView.setOnClickListener(this);
         }
 
@@ -113,7 +115,7 @@ public class SanyuktListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             if (v == itemView) {
                 Log.d("Harish", "Item Clicked mActivity" + mActivity);
                 Intent intent = new Intent(mActivity, SanyuktMemberDetails.class);
-                intent.putExtra(AppConstants.MemberId,mMemberList.get(getAdapterPosition()).getMemberId());
+                intent.putExtra(AppConstants.MemberId, mMemberList.get(getAdapterPosition()).getMemberId());
                 mActivity.startActivity(intent);
             }
         }
