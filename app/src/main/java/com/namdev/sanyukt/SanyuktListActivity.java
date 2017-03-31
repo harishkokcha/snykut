@@ -21,8 +21,8 @@ public class SanyuktListActivity extends AppCompatActivity {
 
         FrameLayout frame = (FrameLayout) findViewById(R.id.id_content_main_fragment);
         Log.d("Harish", "SanyuktListActivity");
-        Intent intent=getIntent();
-         int i=intent.getIntExtra(AppConstants.GENDER,0);
+        Intent intent = getIntent();
+        int i = intent.getIntExtra(AppConstants.GENDER, 0);
         if (savedInstanceState == null) {
             SanyuktListFragment mFragment = SanyuktListFragment.newInstance(i);
             FragmentTransaction ft = getFragmentManager().beginTransaction();

@@ -12,6 +12,8 @@ public class Users {
     private String username;
     private String userpassword;
     private String userphoneno;
+    private String userDeviceID;
+    private String action;
 
     public String getUserid() {
         return userid;
@@ -59,5 +61,21 @@ public class Users {
 
     public void setUserphoto(String userphoto) {
         this.userphoto = userphoto;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public String getUserDeviceID() {
+        return userDeviceID;
+    }
+
+    public void setUserDeviceID(String userDeviceID) {
+        this.userDeviceID = userDeviceID;
     }
 }

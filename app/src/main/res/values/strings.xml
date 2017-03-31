@@ -51,4 +51,13 @@
     <string name="resend_code_txt"><u>Resend Code</u></string>
     <string name="mobile_verification_footer_note">*Please do not leave or refresh this page without verifying your number</string>
     <string name="otp_error_msg">Please enter valid 6 digit OTP (One Time Password)</string>
+    <string name="corss_icon" >\ue828</string>
+    <string name="phone_icon" >\uf098</string>
+    <string name="don_t_have_account_sign_up">Don\'t have account? Sign up</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="mobile">Mobile</string>
+    <string name="pancil_icon" >\ue80a</string>
+    <string name="password_icon" >\ue82a</string>
 </resources>

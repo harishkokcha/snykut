@@ -40,5 +40,6 @@
     <color name="cart_item_bg">#0FB14A</color>
     <color name="colorTransB">#99000000</color>
     <color name="cart_item_submit_btn_bg">#099E44</color>
+    <color name="light_gray">#aaaaaa</color>
 
 </resources>

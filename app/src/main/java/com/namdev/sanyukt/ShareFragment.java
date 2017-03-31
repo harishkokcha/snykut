@@ -1,7 +1,5 @@
 package com.namdev.sanyukt;
 
-import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,23 +7,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-
-import com.namdev.sanyukt.beans.Member;
-
-import java.util.Calendar;
 
 /**
- * Created by Harish on 3/17/2017.
+ * Created by Harish on 3/22/2017.
  */
-public class AddNewPersonFragment extends Fragment {
-    Context mContext;
+public class ShareFragment extends Fragment {
 
-    public AddNewPersonFragment() {
-    }
+    private Context mContext;
 
-    public static AddNewPersonFragment newInstance() {
-        return new AddNewPersonFragment();
+    public static ShareFragment newInstance() {
+        return new ShareFragment();
     }
 
     @Override
@@ -42,8 +33,9 @@ public class AddNewPersonFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_add_person_new, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_share, container, false);
 
         return rootView;
     }
+
 }

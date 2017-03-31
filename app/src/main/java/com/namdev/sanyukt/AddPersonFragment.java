@@ -134,25 +134,26 @@ public class AddPersonFragment extends Fragment {
 
                 member.setMemberName(name.getText().toString());
                 member.setMemberDob(dob.getText().toString());
-                member.setMamberCity(city.getText().toString());
-                member.setMamberState(state.getText().toString());
-                member.setMamberEducation(education.getText().toString());
-                member.setMamberEmployeeDetails(empDetails.getText().toString());
-                member.setMamberFatherName(fName.getText().toString());
-                member.setMamberFatherGotra(fGotra.getText().toString());
-                member.setMamberMotherName(mName.getText().toString());
-                member.setMamberMotherGotra(mGotra.getText().toString());
-                member.setMamberEducationHigher(hEducation.getText().toString());
-                //member.setMamberHeight(height.getText().toString());
-                member.setMamberWeight(weight.getText().toString());
+                member.setMemberCity(city.getText().toString());
+                member.setMemberState(state.getText().toString());
+                member.setMemberEducation(education.getText().toString());
+                member.setMemberEmployeeDetails(empDetails.getText().toString());
+                member.setMemberFatherName(fName.getText().toString());
+                member.setMemberFatherGotta(fGotra.getText().toString());
+                member.setMemberMotherName(mName.getText().toString());
+                member.setMemberMotherGotta(mGotra.getText().toString());
+                member.setMemberEducationHigher(hEducation.getText().toString());
+                //member.setMemberHeight(height.getText().toString());
+                member.setMemberWeight(weight.getText().toString());
                 if (genderRadioGroup.getCheckedRadioButtonId() == R.id.radioMale) {
-                    member.setMamberGender("M");
+                    member.setMemberGender("M");
                 } else {
-                    member.setMamberGender("F");
+                    member.setMemberGender("F");
                 }
 
                 Users users = AppPreferences.getInstance().getUser(mActivity);
                 member.setMemberUserId(users.getUserid());
+                member.setAction(AppConstants.MEMBER_CREATE);
                 Log.d("Harish", " Member Details " + new Gson().toJson(member));
                 GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
                         ApiResponse.class, member, new Response.Listener<ApiResponse>() {
@@ -225,7 +226,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberAnnualIncome(array[position]);
+                member.setMemberAnnualIncome(array[position]);
             }
 
             @Override
@@ -235,26 +236,6 @@ public class AddPersonFragment extends Fragment {
         });
     }
 
-
-    private void DrinkingHabbitSpinner(Dialog rootView) {
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_drinking_habbit);
-        final String array[] = getResources().getStringArray(R.array.drinking_habbit_array);
-        ArrayAdapter<CharSequence> profileForAdapter = ArrayAdapter.createFromResource(mContext,
-                R.array.drinking_habbit_array, android.R.layout.simple_spinner_item);
-        profileForAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(profileForAdapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberDrinkingHabbit(array[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
 
     private void HeightSpinner(View rootView) {
         Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_height_type);
@@ -266,7 +247,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberHeight(array[position]);
+                member.setMemberHeight(array[position]);
             }
 
             @Override
@@ -286,7 +267,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberEducation(array[position]);
+                member.setMemberEducation(array[position]);
             }
 
             @Override
@@ -307,67 +288,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberEmployeeIn(array[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
-
-    private void SmokingHabbitSpinner(Dialog rootView) {
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_smoking_habbit);
-        final String array[] = getResources().getStringArray(R.array.smoking_habbit_array);
-        ArrayAdapter<CharSequence> profileForAdapter = ArrayAdapter.createFromResource(mContext,
-                R.array.smoking_habbit_array, android.R.layout.simple_spinner_item);
-        profileForAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(profileForAdapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberSmokingHabbit(array[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
-
-    private void EatingHabbitSpinner(Dialog rootView) {
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_eating_habbit);
-        final String array[] = getResources().getStringArray(R.array.eating_habbit_array);
-        ArrayAdapter<CharSequence> profileForAdapter = ArrayAdapter.createFromResource(mContext,
-                R.array.eating_habbit_array, android.R.layout.simple_spinner_item);
-        profileForAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(profileForAdapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberEatingHabbit(array[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
-
-    private void HoroscopeMatchSpinner(Dialog rootView) {
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_horoscope_match);
-        final String array[] = getResources().getStringArray(R.array.horoscope_match_array);
-        ArrayAdapter<CharSequence> profileForAdapter = ArrayAdapter.createFromResource(mContext,
-                R.array.horoscope_match_array, android.R.layout.simple_spinner_item);
-        profileForAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(profileForAdapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberHoroscope(array[position]);
+                member.setMemberEmployeeIn(array[position]);
             }
 
             @Override
@@ -387,7 +308,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberIsManglik(array[position]);
+                member.setMemberIsManglik(array[position]);
             }
 
             @Override
@@ -428,7 +349,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberPhysicalStatus(array[position]);
+                member.setMemberPhysicalStatus(array[position]);
             }
 
             @Override
@@ -450,7 +371,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberHaveChild(array[position]);
+                member.setMemberHaveChild(array[position]);
             }
 
             @Override
@@ -471,7 +392,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberMaritalStatus(array[position]);
+                member.setMemberMaritalStatus(array[position]);
             }
 
             @Override
@@ -489,11 +410,11 @@ public class AddPersonFragment extends Fragment {
                 R.array.body_complexion_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        member.setMamberBodyComplexion(spinner.getSelectedItem().toString());
+        member.setMemberBodyComplexion(spinner.getSelectedItem().toString());
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberBodyComplexion(array[position]);
+                member.setMemberBodyComplexion(array[position]);
             }
 
             @Override
@@ -511,11 +432,11 @@ public class AddPersonFragment extends Fragment {
                 R.array.body_type_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        member.setMamberBodyType(spinner.getSelectedItem().toString());
+        member.setMemberBodyType(spinner.getSelectedItem().toString());
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberBodyType(array[position]);
+                member.setMemberBodyType(array[position]);
             }
 
             @Override
@@ -525,87 +446,8 @@ public class AddPersonFragment extends Fragment {
         });
     }
 
-    private void GenderSpinner(View rootView) {
-        /*Gender spinner*/
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_profile_gender);
-        final String array[] = getResources().getStringArray(R.array.gender_array);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(mContext,
-                R.array.gender_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberGender(array[position]);
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
 
-            }
-        });
-    }
-
-    private void FamilyValueSpinner(Dialog rootView) {
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_family_value);
-        final String array[] = getResources().getStringArray(R.array.family_value_array);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(mContext,
-                R.array.family_value_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        member.setMamberFamilyValue(spinner.getSelectedItem().toString());
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberFamilyValue(array[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
-
-    private void FamilyTypeSpinner(Dialog rootView) {
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_family_type);
-        final String array[] = getResources().getStringArray(R.array.family_type_array);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(mContext,
-                R.array.family_type_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberFamilyType(array[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
-
-    private void FamilyStatusSpinner(Dialog rootView) {
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_family_status);
-        final String array[] = getResources().getStringArray(R.array.family_status_array);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(mContext,
-                R.array.family_status_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberFamilyStatus(array[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-    }
 
     private void MotherOcupationSpinner(View rootView) {
         Spinner spinner = (Spinner) rootView.findViewById(R.id.id_input_mother_occupation);
@@ -617,7 +459,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberMotherOcupation(array[position]);
+                member.setMemberMotherOccupation(array[position]);
             }
 
             @Override
@@ -637,7 +479,7 @@ public class AddPersonFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                member.setMamberFatherOcupation(array[position]);
+                member.setMemberFatherOccupation(array[position]);
             }
 
             @Override

@@ -71,7 +71,8 @@ public class RegisterationActivity extends Activity {
                     users.setUserphoneno(phoneEditText.getText().toString());
                     users.setUsername(nameEditText.getText().toString());
                     users.setUserpassword(passwordEditText.getText().toString());
-                    GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.NEW_USER_REGISTRATION_URL,
+                    users.setAction(AppConstants.USER_CREATE_ACTION);
+                    GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.BASE_URL,
                             ApiResponse.class, users, new Response.Listener<ApiResponse>() {
                         @Override
                         public void onResponse(ApiResponse response) {

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "861979791489",
+    "firebase_url": "https://sanyukt-namdev-57011.firebaseio.com",
+    "project_id": "sanyukt-namdev-57011",
+    "storage_bucket": "sanyukt-namdev-57011.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861979791489:android:80d7efaa89a24d9d",
+        "android_client_info": {
+          "package_name": "com.namdev.sanyukt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861979791489-31kfpf7sso4c2ih7ufavrkir8n7ffkqn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.namdev.sanyukt",
+            "certificate_hash": "94d6bfcc25107f4e0883cc9b08eb954753b6db7d"
+          }
+        },
+        {
+          "client_id": "861979791489-r1a7bip6td2cbsk5ghl3a97n6r51tiiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5bv2DBbpKCfx3euj0rb3tx9iehqcG0E0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861979791489-r1a7bip6td2cbsk5ghl3a97n6r51tiiu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

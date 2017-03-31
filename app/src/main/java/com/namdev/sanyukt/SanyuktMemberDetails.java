@@ -83,24 +83,24 @@ public class SanyuktMemberDetails extends Activity {
         name.setText(member.getMemberName());
         createdBy.setText(member.getMemberRelation());
         dob.setText(member.getMemberDob());
-        maritalStatus.setText(member.getMamberMaritalStatus());
-        height.setText(member.getMamberHeight());
-        weight.setText(member.getMamberWeight());
-        skinType.setText(member.getMamberBodyComplexion());
-        bodyType.setText(member.getMamberPhysicalStatus());
-//        fName.setText(member.getMamberFatherName());
-//        fStatus.setText(member.getMamberFatherOcupation());
-//        fGotra.setText(member.getMamberFatherGotra());
-//        mName.setText(member.getMamberMotherName());
-//        mStatus.setText(member.getMamberMotherOcupation());
-//        mGotra.setText(member.getMamberMotherGotra());
-        manglikText.setText(member.getMamberIsManglik());
-        state.setText(member.getMamberState());
-        city.setText(member.getMamberCity());
-        edu.setText(member.getMamberEducation());
-        workingIn.setText(member.getMamberEmployeeIn());
-        workingAs.setText(member.getMamberEmployeeDetails());
-        income.setText(member.getMamberAnnualIncome());
+        maritalStatus.setText(member.getMemberMaritalStatus());
+        height.setText(member.getMemberHeight());
+        weight.setText(member.getMemberWeight());
+        skinType.setText(member.getMemberBodyComplexion());
+        bodyType.setText(member.getMemberPhysicalStatus());
+//        fName.setText(member.getMemberFatherName());
+//        fStatus.setText(member.getMemberFatherOccupation());
+//        fGotra.setText(member.getMemberFatherGotta());
+//        mName.setText(member.getMemberMotherName());
+//        mStatus.setText(member.getMemberMotherOccupation());
+//        mGotra.setText(member.getMemberMotherGotta());
+        manglikText.setText(member.getMemberIsManglik());
+        state.setText(member.getMemberState());
+        city.setText(member.getMemberCity());
+        edu.setText(member.getMemberEducation());
+        workingIn.setText(member.getMemberEmployeeIn());
+        workingAs.setText(member.getMemberEmployeeDetails());
+        income.setText(member.getMemberAnnualIncome());
 
 
     }

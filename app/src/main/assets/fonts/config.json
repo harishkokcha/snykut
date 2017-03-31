@@ -353,6 +353,18 @@
       "css": "mail-2",
       "code": 59431,
       "src": "iconic"
+    },
+    {
+      "uid": "8da3ac534210aae9c0f0e13804c1df97",
+      "css": "cancel",
+      "code": 59432,
+      "src": "websymbols"
+    },
+    {
+      "uid": "15739f3032c2aa3df67efc96b3ffef56",
+      "css": "cancel-circle",
+      "code": 59433,
+      "src": "websymbols"
     }
   ]
 }

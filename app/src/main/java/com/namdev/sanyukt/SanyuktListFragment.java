@@ -27,7 +27,6 @@ import com.namdev.sanyukt.utils.GenericRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -66,15 +65,16 @@ public class SanyuktListFragment extends Fragment {
         memberList = new ArrayList<>();
         mAdapter = new SanyuktListAdapter(mActivity, mRecyclerView, memberList);
         member = new Member();
-        member.setMemberUserId(users.getUserid());
+        member.setMemberUserId("1");
         member.setPageNumber(PAGE);
         member.setPerPageData(5);
+        member.setAction(AppConstants.GET_MEMBER_LIST);
         if (Gender != 0)
-            member.setMamberGender("F");
+            member.setMemberGender("F");
         else
-            member.setMamberGender("M");
+            member.setMemberGender("M");
 
-        GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
+        GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.BASE_URL,
                 ApiResponse.class, member, new Response.Listener<ApiResponse>() {
             @Override
             public void onResponse(ApiResponse response) {

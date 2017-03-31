@@ -64,12 +64,13 @@ public class LoginActivity extends Activity {
                     final Users users = new Users();
                     users.setUserphoneno(userName.getText().toString());
                     users.setUserpassword(userPass.getText().toString());
+                    users.setAction(AppConstants.USER_LOGIN_ACTION);
 
                     GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
                             ApiResponse.class, users, new Response.Listener<ApiResponse>() {
                         @Override
                         public void onResponse(ApiResponse response) {
-                            if (response.getData().equals(AppConstants.SUCCESS)) {
+                            if (response.getResponsecode().equals(AppConstants.SUCCESS)) {
                                 Users user = new Gson().fromJson(response.getData(), Users.class);
                                 if (user.getUserid() != null) {
                                     AppPreferences.getInstance().setUserLogin(mActivity, users);

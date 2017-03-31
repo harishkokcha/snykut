@@ -5,52 +5,52 @@ package com.namdev.sanyukt.beans;
  */
 public class Member {
 
-    public String memberId;
-    public String memberUserId;
-    public String memberName;
-    public String memberDob;
-    public String memberRelation;
-    public String mamberBirthPlace;
-    public String mamberGender;
-    public String mamberPhysicalStatus;
-    public String mamberHeight;
-    public String mamberWeight;
-    public String mamberBodyType;
-    public String mamberBodyComplexion;
-    public String mamberMaritalStatus;
-    public String mamberHaveChild;
-    public String mamberReligion;
-    public String mamberMotherTounge;
-    public String mamberMotherGotra;
-    public String mamberFatherGotra;
-    public String mamberIsManglik;
-    public String mamberHoroscope;
-    public String mamberEatingHabbit;
-    public String mamberDrinkingHabbit;
-    public String mamberSmokingHabbit;
-    public String mamberEducation;
-    public String mamberEducationHigher;
-    public String mamberEducationDetails;
-    public String mamberEmployeeIn;
-    public String mamberEmployeeDetails;
-    public String mamberAnnualIncome;
-    public String mamberFamilyValue;
-    public String mamberFamilyType;
-    public String mamberFamilyStatus;
-    public String mamberFatherName;
-    public String mamberFatherOcupation;
-    public String mamberMotherOcupation;
-    public String mamberMotherName;
-    public String mamberNoOfBrother;
-    public String mamberNoOfMerriedBrother;
-    public String mamberNoOfSister;
-    public String mamberNoOfMerriedSister;
-    public String mamberCity;
-    public String mamberState;
-    public String mamberAddress;
-    public String mamberAboutMe;
-    public int pageNumber;
-    public int perPageData;
+    private String memberId;
+    private String memberUserId;
+    private String memberName;
+    private String memberAge;
+    private String memberDob;
+    private String memberRelation;
+    private String memberBirthPlace;
+    private String memberGender;
+    private String memberPhysicalStatus;
+    private String memberHeight;
+    private String memberWeight;
+    private String memberBodyType;
+    private String memberBodyComplexion;
+    private String memberMaritalStatus;
+    private String memberHaveChild;
+    private String memberReligion;
+    private String memberMotherTinge;
+    private String memberMotherGotta;
+    private String memberFatherGotta;
+    private String memberIsManglik;
+    private String memberHoroscope;
+    private String memberEducation;
+    private String memberEducationHigher;
+    private String memberEmployeeIn;
+    private String memberEmployeeDetails;
+    private String memberAnnualIncome;
+    private String memberFatherName;
+    private String memberFatherOccupation;
+    private String memberMotherOccupation;
+    private String memberMotherName;
+    private String memberCity;
+    private String memberState;
+    private String memberAddress;
+    private String mamberAboutMe;
+    private String action;
+    private int pageNumber;
+    private int perPageData;
+
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
 
     public int getPerPageData() {
         return perPageData;
@@ -84,300 +84,214 @@ public class Member {
         this.mamberAboutMe = mamberAboutMe;
     }
 
-    public String getMamberAddress() {
-        return mamberAddress;
+    public String getMemberAddress() {
+        return memberAddress;
     }
 
-    public void setMamberAddress(String mamberAddress) {
-        this.mamberAddress = mamberAddress;
+    public void setMemberAddress(String memberAddress) {
+        this.memberAddress = memberAddress;
     }
 
-    public String getMamberState() {
-        return mamberState;
+    public String getMemberState() {
+        return memberState;
     }
 
-    public void setMamberState(String mamberState) {
-        this.mamberState = mamberState;
+    public void setMemberState(String memberState) {
+        this.memberState = memberState;
     }
 
-    public String getMamberCity() {
-        return mamberCity;
+    public String getMemberCity() {
+        return memberCity;
     }
 
-    public void setMamberCity(String mamberCity) {
-        this.mamberCity = mamberCity;
+    public void setMemberCity(String memberCity) {
+        this.memberCity = memberCity;
     }
 
-    public String getMamberNoOfMerriedSister() {
-        return mamberNoOfMerriedSister;
+    public String getMemberMotherName() {
+        return memberMotherName;
     }
 
-    public void setMamberNoOfMerriedSister(String mamberNoOfMerriedSister) {
-        this.mamberNoOfMerriedSister = mamberNoOfMerriedSister;
+    public void setMemberMotherName(String memberMotherName) {
+        this.memberMotherName = memberMotherName;
     }
 
-    public String getMamberNoOfSister() {
-        return mamberNoOfSister;
+    public String getMemberMotherOccupation() {
+        return memberMotherOccupation;
     }
 
-    public void setMamberNoOfSister(String mamberNoOfSister) {
-        this.mamberNoOfSister = mamberNoOfSister;
+    public void setMemberMotherOccupation(String memberMotherOccupation) {
+        this.memberMotherOccupation = memberMotherOccupation;
     }
 
-    public String getMamberNoOfMerriedBrother() {
-        return mamberNoOfMerriedBrother;
+    public String getMemberFatherOccupation() {
+        return memberFatherOccupation;
     }
 
-    public void setMamberNoOfMerriedBrother(String mamberNoOfMerriedBrother) {
-        this.mamberNoOfMerriedBrother = mamberNoOfMerriedBrother;
+    public void setMemberFatherOccupation(String memberFatherOccupation) {
+        this.memberFatherOccupation = memberFatherOccupation;
     }
 
-    public String getMamberNoOfBrother() {
-        return mamberNoOfBrother;
+    public String getMemberFatherName() {
+        return memberFatherName;
     }
 
-    public void setMamberNoOfBrother(String mamberNoOfBrother) {
-        this.mamberNoOfBrother = mamberNoOfBrother;
+    public void setMemberFatherName(String memberFatherName) {
+        this.memberFatherName = memberFatherName;
     }
 
-    public String getMamberMotherName() {
-        return mamberMotherName;
-    }
-
-    public void setMamberMotherName(String mamberMotherName) {
-        this.mamberMotherName = mamberMotherName;
-    }
-
-    public String getMamberMotherOcupation() {
-        return mamberMotherOcupation;
-    }
-
-    public void setMamberMotherOcupation(String mamberMotherOcupation) {
-        this.mamberMotherOcupation = mamberMotherOcupation;
-    }
-
-    public String getMamberFatherOcupation() {
-        return mamberFatherOcupation;
-    }
-
-    public void setMamberFatherOcupation(String mamberFatherOcupation) {
-        this.mamberFatherOcupation = mamberFatherOcupation;
-    }
-
-    public String getMamberFatherName() {
-        return mamberFatherName;
-    }
-
-    public void setMamberFatherName(String mamberFatherName) {
-        this.mamberFatherName = mamberFatherName;
-    }
-
-    public String getMamberFamilyStatus() {
-        return mamberFamilyStatus;
-    }
-
-    public void setMamberFamilyStatus(String mamberFamilyStatus) {
-        this.mamberFamilyStatus = mamberFamilyStatus;
-    }
-
-    public String getMamberFamilyType() {
-        return mamberFamilyType;
-    }
 
-    public void setMamberFamilyType(String mamberFamilyType) {
-        this.mamberFamilyType = mamberFamilyType;
+    public String getMemberAnnualIncome() {
+        return memberAnnualIncome;
     }
 
-    public String getMamberFamilyValue() {
-        return mamberFamilyValue;
+    public void setMemberAnnualIncome(String memberAnnualIncome) {
+        this.memberAnnualIncome = memberAnnualIncome;
     }
 
-    public void setMamberFamilyValue(String mamberFamilyValue) {
-        this.mamberFamilyValue = mamberFamilyValue;
+    public String getMemberEmployeeDetails() {
+        return memberEmployeeDetails;
     }
 
-    public String getMamberAnnualIncome() {
-        return mamberAnnualIncome;
+    public void setMemberEmployeeDetails(String memberEmployeeDetails) {
+        this.memberEmployeeDetails = memberEmployeeDetails;
     }
 
-    public void setMamberAnnualIncome(String mamberAnnualIncome) {
-        this.mamberAnnualIncome = mamberAnnualIncome;
+    public String getMemberEmployeeIn() {
+        return memberEmployeeIn;
     }
 
-    public String getMamberEmployeeDetails() {
-        return mamberEmployeeDetails;
+    public void setMemberEmployeeIn(String memberEmployeeIn) {
+        this.memberEmployeeIn = memberEmployeeIn;
     }
 
-    public void setMamberEmployeeDetails(String mamberEmployeeDetails) {
-        this.mamberEmployeeDetails = mamberEmployeeDetails;
-    }
-
-    public String getMamberEmployeeIn() {
-        return mamberEmployeeIn;
-    }
-
-    public void setMamberEmployeeIn(String mamberEmployeeIn) {
-        this.mamberEmployeeIn = mamberEmployeeIn;
-    }
-
-    public String getMamberEducationDetails() {
-        return mamberEducationDetails;
-    }
-
-    public void setMamberEducationDetails(String mamberEducationDetails) {
-        this.mamberEducationDetails = mamberEducationDetails;
-    }
-
-    public String getMamberEducation() {
-        return mamberEducation;
-    }
-
-    public void setMamberEducation(String mamberEducation) {
-        this.mamberEducation = mamberEducation;
-    }
-
-    public String getMamberSmokingHabbit() {
-        return mamberSmokingHabbit;
-    }
-
-    public void setMamberSmokingHabbit(String mamberSmokingHabbit) {
-        this.mamberSmokingHabbit = mamberSmokingHabbit;
-    }
-
-    public String getMamberDrinkingHabbit() {
-        return mamberDrinkingHabbit;
-    }
-
-    public void setMamberDrinkingHabbit(String mamberDrinkingHabbit) {
-        this.mamberDrinkingHabbit = mamberDrinkingHabbit;
-    }
 
-    public String getMamberEatingHabbit() {
-        return mamberEatingHabbit;
+    public String getMemberEducation() {
+        return memberEducation;
     }
 
-    public void setMamberEatingHabbit(String mamberEatingHabbit) {
-        this.mamberEatingHabbit = mamberEatingHabbit;
+    public void setMemberEducation(String memberEducation) {
+        this.memberEducation = memberEducation;
     }
 
-    public String getMamberHoroscope() {
-        return mamberHoroscope;
+    public String getMemberHoroscope() {
+        return memberHoroscope;
     }
 
-    public void setMamberHoroscope(String mamberHoroscope) {
-        this.mamberHoroscope = mamberHoroscope;
+    public void setMemberHoroscope(String memberHoroscope) {
+        this.memberHoroscope = memberHoroscope;
     }
 
-    public String getMamberIsManglik() {
-        return mamberIsManglik;
+    public String getMemberIsManglik() {
+        return memberIsManglik;
     }
 
-    public void setMamberIsManglik(String mamberIsManglik) {
-        this.mamberIsManglik = mamberIsManglik;
+    public void setMemberIsManglik(String memberIsManglik) {
+        this.memberIsManglik = memberIsManglik;
     }
 
-    public String getMamberFatherGotra() {
-        return mamberFatherGotra;
+    public String getMemberFatherGotta() {
+        return memberFatherGotta;
     }
 
-    public void setMamberFatherGotra(String mamberFatherGotra) {
-        this.mamberFatherGotra = mamberFatherGotra;
+    public void setMemberFatherGotta(String memberFatherGotta) {
+        this.memberFatherGotta = memberFatherGotta;
     }
 
-    public String getMamberMotherGotra() {
-        return mamberMotherGotra;
+    public String getMemberMotherGotta() {
+        return memberMotherGotta;
     }
 
-    public void setMamberMotherGotra(String mamberMotherGotra) {
-        this.mamberMotherGotra = mamberMotherGotra;
+    public void setMemberMotherGotta(String memberMotherGotta) {
+        this.memberMotherGotta = memberMotherGotta;
     }
 
-    public String getMamberMotherTounge() {
-        return mamberMotherTounge;
+    public String getMemberMotherTinge() {
+        return memberMotherTinge;
     }
 
-    public void setMamberMotherTounge(String mamberMotherTounge) {
-        this.mamberMotherTounge = mamberMotherTounge;
+    public void setMemberMotherTinge(String memberMotherTinge) {
+        this.memberMotherTinge = memberMotherTinge;
     }
 
-    public String getMamberReligion() {
-        return mamberReligion;
+    public String getMemberReligion() {
+        return memberReligion;
     }
 
-    public void setMamberReligion(String mamberReligion) {
-        this.mamberReligion = mamberReligion;
+    public void setMemberReligion(String memberReligion) {
+        this.memberReligion = memberReligion;
     }
 
-    public String getMamberHaveChild() {
-        return mamberHaveChild;
+    public String getMemberHaveChild() {
+        return memberHaveChild;
     }
 
-    public void setMamberHaveChild(String mamberHaveChild) {
-        this.mamberHaveChild = mamberHaveChild;
+    public void setMemberHaveChild(String memberHaveChild) {
+        this.memberHaveChild = memberHaveChild;
     }
 
-    public String getMamberMaritalStatus() {
-        return mamberMaritalStatus;
+    public String getMemberMaritalStatus() {
+        return memberMaritalStatus;
     }
 
-    public void setMamberMaritalStatus(String mamberMaritalStatus) {
-        this.mamberMaritalStatus = mamberMaritalStatus;
+    public void setMemberMaritalStatus(String memberMaritalStatus) {
+        this.memberMaritalStatus = memberMaritalStatus;
     }
 
-    public String getMamberBodyComplexion() {
-        return mamberBodyComplexion;
+    public String getMemberBodyComplexion() {
+        return memberBodyComplexion;
     }
 
-    public void setMamberBodyComplexion(String mamberBodyComplexion) {
-        this.mamberBodyComplexion = mamberBodyComplexion;
+    public void setMemberBodyComplexion(String memberBodyComplexion) {
+        this.memberBodyComplexion = memberBodyComplexion;
     }
 
-    public String getMamberBodyType() {
-        return mamberBodyType;
+    public String getMemberBodyType() {
+        return memberBodyType;
     }
 
-    public void setMamberBodyType(String mamberBodyType) {
-        this.mamberBodyType = mamberBodyType;
+    public void setMemberBodyType(String memberBodyType) {
+        this.memberBodyType = memberBodyType;
     }
 
-    public String getMamberWeight() {
-        return mamberWeight;
+    public String getMemberWeight() {
+        return memberWeight;
     }
 
-    public void setMamberWeight(String mamberWeight) {
-        this.mamberWeight = mamberWeight;
+    public void setMemberWeight(String memberWeight) {
+        this.memberWeight = memberWeight;
     }
 
-    public String getMamberHeight() {
-        return mamberHeight;
+    public String getMemberHeight() {
+        return memberHeight;
     }
 
-    public void setMamberHeight(String mamberHeight) {
-        this.mamberHeight = mamberHeight;
+    public void setMemberHeight(String memberHeight) {
+        this.memberHeight = memberHeight;
     }
 
-    public String getMamberPhysicalStatus() {
-        return mamberPhysicalStatus;
+    public String getMemberPhysicalStatus() {
+        return memberPhysicalStatus;
     }
 
-    public void setMamberPhysicalStatus(String mamberPhysicalStatus) {
-        this.mamberPhysicalStatus = mamberPhysicalStatus;
+    public void setMemberPhysicalStatus(String memberPhysicalStatus) {
+        this.memberPhysicalStatus = memberPhysicalStatus;
     }
 
-    public String getMamberGender() {
-        return mamberGender;
+    public String getMemberGender() {
+        return memberGender;
     }
 
-    public void setMamberGender(String mamberGender) {
-        this.mamberGender = mamberGender;
+    public void setMemberGender(String memberGender) {
+        this.memberGender = memberGender;
     }
 
-    public String getMamberBirthPlace() {
-        return mamberBirthPlace;
+    public String getMemberBirthPlace() {
+        return memberBirthPlace;
     }
 
-    public void setMamberBirthPlace(String mamberBirthPlace) {
-        this.mamberBirthPlace = mamberBirthPlace;
+    public void setMemberBirthPlace(String memberBirthPlace) {
+        this.memberBirthPlace = memberBirthPlace;
     }
 
     public String getMemberRelation() {
@@ -412,11 +326,19 @@ public class Member {
         this.memberId = memberId;
     }
 
-    public String getMamberEducationHigher() {
-        return mamberEducationHigher;
+    public String getMemberEducationHigher() {
+        return memberEducationHigher;
     }
 
-    public void setMamberEducationHigher(String mamberEducationHigher) {
-        this.mamberEducationHigher = mamberEducationHigher;
+    public void setMemberEducationHigher(String memberEducationHigher) {
+        this.memberEducationHigher = memberEducationHigher;
+    }
+
+    public String getMemberAge() {
+        return memberAge;
+    }
+
+    public void setMemberAge(String memberAge) {
+        this.memberAge = memberAge;
     }
 }

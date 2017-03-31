@@ -65,6 +65,7 @@
                         android:text="26 yr, 5'5"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
+
                     <TextView
                         android:id="@+id/id_sanyukt_list_member_education"
                         android:layout_width="wrap_content"
@@ -87,9 +88,8 @@
                 android:id="@+id/customer_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical"></LinearLayout>
 
-            </LinearLayout>
             <TextView
                 android:id="@+id/id_sanyukt_list_member_created_by"
                 android:layout_width="match_parent"

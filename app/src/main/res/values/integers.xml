@@ -2,4 +2,5 @@
 <resources>
     <integer name="otp_maxlength">6</integer>
     <integer name="otp_length">6</integer>
+    <integer name="phone_maxlength">10</integer>
 </resources>

@@ -37,7 +37,7 @@ public class CustomTextView extends TextView {
 
 class TypeFace {
     private static final String TAG = "Typefaces";
-    private static final Hashtable<String, Typeface> cache=new Hashtable<String, Typeface>();
+    private static final Hashtable<String, Typeface> cache = new Hashtable<String, Typeface>();
 
     public static Typeface get(Context c, String assetPath) {
         synchronized (cache) {
