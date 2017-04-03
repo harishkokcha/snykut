@@ -11,6 +11,7 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonRequest;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.namdev.sanyukt.beans.ApiResponse;
 
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
@@ -193,18 +194,16 @@ public class GenericRequest<T> extends JsonRequest<T> {
                 // If the status is correct, we return a success but with a null object, because the server didn't return anything
                 return Response.success(null, HttpHeaderParser.parseCacheHeaders(response));
             }
-        } else {
-            try {
-                // If it's not muted; we just need to create our POJO from the returned JSON and handle correctly the errors
-                String json = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
-                Log.d("GenricRequest", "Result json :" + json);
-                T parsedObject = gson.fromJson(json, clazz);
-                return Response.success(parsedObject, HttpHeaderParser.parseCacheHeaders(response));
-            } catch (UnsupportedEncodingException e) {
-                return Response.error(new ParseError(e));
-            } catch (JsonSyntaxException e) {
-                return Response.error(new ParseError(e));
-            }
+        } else try {
+            // If it's not muted; we just need to create our POJO from the returned JSON and handle correctly the errors
+            String json = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
+            Log.d("GenricRequest", "Result json :" + json);
+            T parsedObject = gson.fromJson(json, clazz);
+            return Response.success(parsedObject, HttpHeaderParser.parseCacheHeaders(response));
+        } catch (UnsupportedEncodingException e) {
+            return Response.error(new ParseError(e));
+        } catch (JsonSyntaxException e) {
+            return Response.error(new ParseError(e));
         }
         return null;
     }

@@ -167,6 +167,8 @@
     <dimen name="successful_your_ticket_size">30sp</dimen>
     <dimen name="dialog_content_t_margin">10dp</dimen>
     <dimen name="city_list_item_t_margin">10dp</dimen>
+    <dimen name="tile_letter_font_size">33sp</dimen>
+    <dimen name="letter_tile_size">64dp</dimen>
 
 
 </resources>

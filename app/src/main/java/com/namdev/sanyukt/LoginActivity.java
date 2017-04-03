@@ -3,10 +3,12 @@ package com.namdev.sanyukt;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -20,6 +22,8 @@ import com.namdev.sanyukt.utils.AppPreferences;
 import com.namdev.sanyukt.utils.DialogUtils;
 import com.namdev.sanyukt.utils.FormUtils;
 import com.namdev.sanyukt.utils.GenericRequest;
+
+import static com.namdev.sanyukt.R.drawable.user;
 
 /**
  * Created by harish on 12/24/2016.
@@ -65,24 +69,29 @@ public class LoginActivity extends Activity {
                     users.setUserphoneno(userName.getText().toString());
                     users.setUserpassword(userPass.getText().toString());
                     users.setAction(AppConstants.USER_LOGIN_ACTION);
+                    users.setUserDeviceID(AppPreferences.getInstance().getDeviceId(mActivity));
 
-                    GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
+                    GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.BASE_URL,
                             ApiResponse.class, users, new Response.Listener<ApiResponse>() {
                         @Override
                         public void onResponse(ApiResponse response) {
+                            Log.d("Harish", "response.getResponsecode() " + response.getResponsecode());
+                            Log.d("Harish", "response " + new Gson().toJson(response));
                             if (response.getResponsecode().equals(AppConstants.SUCCESS)) {
-                                Users user = new Gson().fromJson(response.getData(), Users.class);
+                                Users user = new Gson().fromJson((response.getObjects()).toString(), Users.class);
                                 if (user.getUserid() != null) {
-                                    AppPreferences.getInstance().setUserLogin(mActivity, users);
+                                    AppPreferences.getInstance().setUserLogin(mActivity, user);
                                     Intent intent = new Intent(mActivity, MainActivity.class);
                                     startActivity(intent);
                                 }
+                            } else {
+                                Toast.makeText(mActivity, response.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-
+                            Log.d("Harish", "response " + new Gson().toJson(error));
                         }
                     }) {
                     };

@@ -20,6 +20,7 @@ import com.namdev.sanyukt.adapters.SanyuktListAdapter;
 import com.namdev.sanyukt.beans.ApiResponse;
 import com.namdev.sanyukt.beans.AppConstants;
 import com.namdev.sanyukt.beans.Member;
+import com.namdev.sanyukt.beans.MemberListResponse;
 import com.namdev.sanyukt.beans.Users;
 import com.namdev.sanyukt.utils.AppController;
 import com.namdev.sanyukt.utils.AppPreferences;
@@ -74,14 +75,17 @@ public class SanyuktListFragment extends Fragment {
         else
             member.setMemberGender("M");
 
-        GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.BASE_URL,
-                ApiResponse.class, member, new Response.Listener<ApiResponse>() {
+        GenericRequest<MemberListResponse> genericRequest = new GenericRequest<MemberListResponse>(Request.Method.POST, AppConstants.BASE_URL,
+                MemberListResponse.class, member, new Response.Listener<MemberListResponse>() {
             @Override
-            public void onResponse(ApiResponse response) {
-                if (response.getData().equals(AppConstants.SUCCESS)) {
+            public void onResponse(MemberListResponse response) {
+                if (response.getResponsecode().equals(AppConstants.SUCCESS)) {
                     Type listType = new TypeToken<List<Member>>() {
                     }.getType();
-                    memberList = new Gson().fromJson(response.getData(), listType);
+
+                    Log.d("KOKCHA", "response.getObjects().toString() " + memberList.toString());
+                    memberList = response.getMemberList();
+//                    memberList = new Gson().fromJson(response.getObjects().toString(), listType);
                     mAdapter = new SanyuktListAdapter(mActivity, mRecyclerView, memberList);
                     mRecyclerView.setAdapter(mAdapter);
                 }
@@ -89,7 +93,7 @@ public class SanyuktListFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Log.d("Harish", "response " + new Gson().toJson(error));
             }
         }) {
         };
@@ -106,7 +110,7 @@ public class SanyuktListFragment extends Fragment {
                 member.setMemberUserId(users.getUserid());
                 member.setPageNumber(PAGE + 1);
                 member.setPerPageData(5);
-                GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
+                GenericRequest<ApiResponse> genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
                         ApiResponse.class, member, new Response.Listener<ApiResponse>() {
                     @Override
                     public void onResponse(ApiResponse response) {

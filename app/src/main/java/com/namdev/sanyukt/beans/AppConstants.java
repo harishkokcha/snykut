@@ -6,7 +6,7 @@ package com.namdev.sanyukt.beans;
 public class AppConstants {
     //    public static final String BASE_URL = "http://192.168.43.120:8080/snykut/webapi/snykut/";
 
-    public static final String BASE_URL = "http://10.81.234.10/SanyuktPhpAdmin/admin/mainadmin/api.php";
+    public static final String BASE_URL = "http://sanyuktnamdev.com/api.php";
     public static final String NEW_USER_REGISTRATION_URL = BASE_URL + "";
     public static final String USER_LOGIN = BASE_URL + "api.php";
     public static final String USER_DETAILS = BASE_URL + "user/user_details";

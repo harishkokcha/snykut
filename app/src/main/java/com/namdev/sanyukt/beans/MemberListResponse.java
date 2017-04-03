@@ -2,25 +2,15 @@ package com.namdev.sanyukt.beans;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ApiResponse {
+import java.util.List;
 
+/**
+ * Created by Harish on 4/3/2017.
+ */
+public class MemberListResponse {
 
     private String responsecode;
     private String dataDS;
-    @SerializedName("data")
-    private Object objects;
-
-    private String message;
-
-    public Object getObjects() {
-        return objects;
-    }
-
-    public void setObjects(Object objects) {
-        this.objects = objects;
-    }
-
-
 
     public String getResponsecode() {
         return responsecode;
@@ -30,12 +20,20 @@ public class ApiResponse {
         this.responsecode = responsecode;
     }
 
-    public String getData() {
+    public String getDataDS() {
         return dataDS;
     }
 
-    public void setData(String data) {
-        this.dataDS = data;
+    public void setDataDS(String dataDS) {
+        this.dataDS = dataDS;
+    }
+
+    public List<Member> getMemberList() {
+        return memberList;
+    }
+
+    public void setMemberList(List<Member> memberList) {
+        this.memberList = memberList;
     }
 
     public String getMessage() {
@@ -45,4 +43,10 @@ public class ApiResponse {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    @SerializedName("data")
+    private List<Member> memberList;
+
+    private String message;
+
 }

@@ -41,8 +41,7 @@
                 <ImageView
                     android:id="@+id/image"
                     android:layout_width="65dp"
-                    android:layout_height="65dp"
-                    android:background="@drawable/user" />
+                    android:layout_height="65dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -84,11 +83,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/customer_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
 
             <TextView
                 android:id="@+id/id_sanyukt_list_member_created_by"

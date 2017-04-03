@@ -365,6 +365,12 @@
       "css": "cancel-circle",
       "code": 59433,
       "src": "websymbols"
+    },
+    {
+      "uid": "8beac4a5fd5bed9f82ca7a96cc8ba218",
+      "css": "key",
+      "code": 59434,
+      "src": "entypo"
     }
   ]
 }

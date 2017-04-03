@@ -1,32 +1,49 @@
 package com.namdev.sanyukt.beans;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Harish on 12/29/2016.
  */
 public class Member {
 
+    @SerializedName("member_id")
     private String memberId;
+
     private String memberUserId;
+    @SerializedName("member_name")
     private String memberName;
+    @SerializedName("member_age")
     private String memberAge;
+
     private String memberDob;
     private String memberRelation;
     private String memberBirthPlace;
+    @SerializedName("member_gender")
     private String memberGender;
+
     private String memberPhysicalStatus;
+    @SerializedName("member_height")
     private String memberHeight;
+
     private String memberWeight;
+    @SerializedName("member_body_type")
     private String memberBodyType;
+    @SerializedName("member_complexion")
     private String memberBodyComplexion;
+    @SerializedName("member_merital_status")
     private String memberMaritalStatus;
     private String memberHaveChild;
     private String memberReligion;
     private String memberMotherTinge;
     private String memberMotherGotta;
     private String memberFatherGotta;
+    @SerializedName("memebr_ismanglik")
     private String memberIsManglik;
     private String memberHoroscope;
+    @SerializedName("member_basic_edu")
     private String memberEducation;
+    @SerializedName("member_high_edu")
     private String memberEducationHigher;
     private String memberEmployeeIn;
     private String memberEmployeeDetails;
@@ -35,7 +52,9 @@ public class Member {
     private String memberFatherOccupation;
     private String memberMotherOccupation;
     private String memberMotherName;
+    @SerializedName("member_city")
     private String memberCity;
+    @SerializedName("member_state")
     private String memberState;
     private String memberAddress;
     private String mamberAboutMe;
