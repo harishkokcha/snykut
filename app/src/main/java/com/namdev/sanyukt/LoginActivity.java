@@ -83,6 +83,7 @@ public class LoginActivity extends Activity {
                                     AppPreferences.getInstance().setUserLogin(mActivity, user);
                                     Intent intent = new Intent(mActivity, MainActivity.class);
                                     startActivity(intent);
+                                    finish();
                                 }
                             } else {
                                 Toast.makeText(mActivity, response.getMessage(), Toast.LENGTH_SHORT).show();

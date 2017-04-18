@@ -98,8 +98,8 @@ public class AppPreferences {
         putString(context, USER_PHONE, users.getUserphoneno());
         putString(context, USER_EMAIL, users.getUseremail());
         putString(context, USER_ID, users.getUserid());
-        Log.d("Harish","setUserLogin AppPreferences : "+users.getUserid());
-        Log.d("Harish","setUserLogin AppPreferences getUser(context).getUserid() : "+getUser(context).getUserid());
+        Log.d("Harish", "setUserLogin AppPreferences : " + users.getUserid());
+        Log.d("Harish", "setUserLogin AppPreferences getUser(context).getUserid() : " + getUser(context).getUserid());
     }
 
     public Users getUser(Context context) {

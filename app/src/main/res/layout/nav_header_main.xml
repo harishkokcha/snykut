@@ -2,35 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nav_header_main_view"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/nav_header_height"
+    android:layout_height="60dp"
     android:background="@drawable/side_nav_bar"
-    android:gravity="bottom"
+    android:gravity="center"
     android:orientation="vertical"
     android:paddingBottom="2dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    <!--
+        <LinearLayout
+            android:id="@+id/id_drawer_banner_img_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/profilepic_circle_bg"
+            android:padding="2dp">
 
-    <LinearLayout
-        android:id="@+id/id_drawer_banner_img_ll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/profilepic_circle_bg"
-        android:padding="2dp">
-
-        <com.namdev.sanyukt.views.RoundedImageView
-            android:id="@+id/imageView"
-            android:layout_width="@dimen/drawer_profile_mg_size"
-            android:layout_height="@dimen/drawer_profile_mg_size"
-            android:adjustViewBounds="false"
-            android:scaleType="fitXY" />
-    </LinearLayout>
+            <com.namdev.sanyukt.views.RoundedImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/drawer_profile_mg_size"
+                android:layout_height="@dimen/drawer_profile_mg_size"
+                android:adjustViewBounds="false"
+                android:scaleType="fitXY" />
+        </LinearLayout>-->
 
     <TextView
         android:id="@+id/id_nav_header_user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
         android:text="Android Studio"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -38,6 +39,7 @@
         android:id="@+id/id_nav_header_user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="android.studio@android.com" />
+        android:text="android.studio@android.com"
+        android:visibility="gone" />
 
 </LinearLayout>

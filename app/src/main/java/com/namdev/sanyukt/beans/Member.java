@@ -9,23 +9,24 @@ public class Member {
 
     @SerializedName("member_id")
     private String memberId;
-
+    @SerializedName("user_id")
     private String memberUserId;
     @SerializedName("member_name")
     private String memberName;
     @SerializedName("member_age")
     private String memberAge;
-
+    @SerializedName("member_dob")
     private String memberDob;
+    @SerializedName("member_relation")
     private String memberRelation;
     private String memberBirthPlace;
     @SerializedName("member_gender")
     private String memberGender;
-
+    @SerializedName("member_physical_status")
     private String memberPhysicalStatus;
     @SerializedName("member_height")
     private String memberHeight;
-
+    @SerializedName("member_weight")
     private String memberWeight;
     @SerializedName("member_body_type")
     private String memberBodyType;
@@ -33,29 +34,41 @@ public class Member {
     private String memberBodyComplexion;
     @SerializedName("member_merital_status")
     private String memberMaritalStatus;
+    @SerializedName("member_child")
     private String memberHaveChild;
     private String memberReligion;
-    private String memberMotherTinge;
+    @SerializedName("member_m_gotra")
     private String memberMotherGotta;
+    @SerializedName("member_f_gotra")
     private String memberFatherGotta;
     @SerializedName("memebr_ismanglik")
     private String memberIsManglik;
-    private String memberHoroscope;
     @SerializedName("member_basic_edu")
     private String memberEducation;
     @SerializedName("member_high_edu")
     private String memberEducationHigher;
+    @SerializedName("member_employee_in")
     private String memberEmployeeIn;
+    @SerializedName("member_role")
     private String memberEmployeeDetails;
+    @SerializedName("member_income")
     private String memberAnnualIncome;
+    @SerializedName("member_fname")
     private String memberFatherName;
+    @SerializedName("member_foccupation")
     private String memberFatherOccupation;
+    @SerializedName("member_moccupation")
     private String memberMotherOccupation;
+    @SerializedName("member_mname")
     private String memberMotherName;
     @SerializedName("member_city")
     private String memberCity;
     @SerializedName("member_state")
     private String memberState;
+    @SerializedName("member_like")
+    private int memberLike;
+    @SerializedName("member_fev")
+    private int memberFev;
     private String memberAddress;
     private String mamberAboutMe;
     private String action;
@@ -95,6 +108,7 @@ public class Member {
     public void setMemberUserId(String memberUserId) {
         this.memberUserId = memberUserId;
     }
+
     public String getMamberAboutMe() {
         return mamberAboutMe;
     }
@@ -193,13 +207,6 @@ public class Member {
         this.memberEducation = memberEducation;
     }
 
-    public String getMemberHoroscope() {
-        return memberHoroscope;
-    }
-
-    public void setMemberHoroscope(String memberHoroscope) {
-        this.memberHoroscope = memberHoroscope;
-    }
 
     public String getMemberIsManglik() {
         return memberIsManglik;
@@ -225,13 +232,6 @@ public class Member {
         this.memberMotherGotta = memberMotherGotta;
     }
 
-    public String getMemberMotherTinge() {
-        return memberMotherTinge;
-    }
-
-    public void setMemberMotherTinge(String memberMotherTinge) {
-        this.memberMotherTinge = memberMotherTinge;
-    }
 
     public String getMemberReligion() {
         return memberReligion;
@@ -359,5 +359,21 @@ public class Member {
 
     public void setMemberAge(String memberAge) {
         this.memberAge = memberAge;
+    }
+
+    public int getMemberLike() {
+        return memberLike;
+    }
+
+    public void setMemberLike(int memberLike) {
+        this.memberLike = memberLike;
+    }
+
+    public int getMemberFev() {
+        return memberFev;
+    }
+
+    public void setMemberFev(int memberFev) {
+        this.memberFev = memberFev;
     }
 }

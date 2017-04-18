@@ -8,6 +8,7 @@ public class UserPhoneVerification {
     private String userID;
     private String otp;
     private int otpSessionID;
+    private String action;
 
     public String getPhoneNo() {
         return phoneNo;
@@ -39,6 +40,14 @@ public class UserPhoneVerification {
 
     public void setOtpSessionID(int otpSessionID) {
         this.otpSessionID = otpSessionID;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public String getAction() {
+        return action;
     }
 }
 

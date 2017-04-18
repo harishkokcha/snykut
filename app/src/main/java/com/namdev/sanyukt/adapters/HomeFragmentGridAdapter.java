@@ -24,13 +24,13 @@ public class HomeFragmentGridAdapter extends BaseAdapter {
     private int[] mImage;
     private String[] mText;
     private Activity mActivity;
-    private static LayoutInflater inflater=null;
+    private static LayoutInflater inflater = null;
 
     public HomeFragmentGridAdapter(HomeFragment homeFragment, String[] prgmNameList, int[] myImageList) {
-        mActivity=homeFragment.getActivity();
-        mImage=myImageList;
-        mText=prgmNameList;
-        inflater = (LayoutInflater)mActivity.
+        mActivity = homeFragment.getActivity();
+        mImage = myImageList;
+        mText = prgmNameList;
+        inflater = (LayoutInflater) mActivity.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -51,10 +51,10 @@ public class HomeFragmentGridAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        Holder holder=new Holder();
+        Holder holder = new Holder();
         View rowView = inflater.inflate(R.layout.home_fragment_grid_item, null);
-        holder.tv=(TextView) rowView.findViewById(R.id.id_grid_item_text);
-        holder.img=(ImageView) rowView.findViewById(R.id.id_grid_item_image);
+        holder.tv = (TextView) rowView.findViewById(R.id.id_grid_item_text);
+        holder.img = (ImageView) rowView.findViewById(R.id.id_grid_item_image);
 
         holder.tv.setText(mText[position]);
         holder.img.setImageResource(mImage[position]);
@@ -62,18 +62,17 @@ public class HomeFragmentGridAdapter extends BaseAdapter {
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mActivity, "You Clicked "+mText[position], Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(mActivity, SanyuktListActivity.class);
-                intent.putExtra(AppConstants.GENDER,position);
+                intent.putExtra(AppConstants.GENDER, position);
                 mActivity.startActivity(intent);
+
             }
         });
 
         return rowView;
     }
 
-    private class Holder
-    {
+    private class Holder {
         TextView tv;
         ImageView img;
     }

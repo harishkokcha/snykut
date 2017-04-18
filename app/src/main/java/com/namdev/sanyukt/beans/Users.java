@@ -6,7 +6,7 @@ package com.namdev.sanyukt.beans;
 
 public class Users {
 
-    private String userid;
+    private String userId;
     private String userphoto;
     private String useremail;
     private String username;
@@ -16,11 +16,11 @@ public class Users {
     private String action;
 
     public String getUserid() {
-        return userid;
+        return userId;
     }
 
     public void setUserid(String userid) {
-        this.userid = userid;
+        this.userId = userid;
     }
 
     public String getUseremail() {

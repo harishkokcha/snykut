@@ -60,4 +60,10 @@
     <string name="mobile">Mobile</string>
     <string name="pancil_icon" >\ue80a</string>
     <string name="password_icon" >\ue82a</string>
+    <string name="like_icon" >\ue809</string>
+    <string name="fav_icon">\ue820</string>
+    <string name="mobile_icon">\ue80d</string>
+    <string name="delete_icon">\uf1f8</string>
+    <string name="relation_list_hdr">Relation</string>
+    <string name="click_back_again">Please click BACK again to exit</string>
 </resources>

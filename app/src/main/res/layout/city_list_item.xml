@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_city_list_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/city_list_item_t_margin"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/city_list_item_h_padding"
+    android:paddingLeft="@dimen/city_list_item_h_padding"
+    android:paddingRight="@dimen/city_list_item_h_padding">
+
+    <TextView
+        android:id="@+id/id_city_list_item_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/city_list_item_txtvw_v_padding"
+        android:paddingLeft="@dimen/city_list_item_txtvw_h_padding"
+        android:paddingTop="@dimen/city_list_item_txtvw_v_padding"
+        android:text="Gurgaon"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/AirQText_DGray"
+        android:textSize="@dimen/search_txt_size" />
+
+    <include
+        android:id="@+id/id_city_list_item_divider"
+        layout="@layout/lightdivider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

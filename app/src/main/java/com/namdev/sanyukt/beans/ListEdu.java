@@ -2,24 +2,15 @@ package com.namdev.sanyukt.beans;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ApiResponse {
+import java.util.List;
 
+/**
+ * Created by Harish on 4/17/2017.
+ */
 
+public class ListEdu {
     private String responsecode;
     private String dataDS;
-    @SerializedName("data")
-    private Object objects;
-
-    private String message;
-
-    public Object getObjects() {
-        return objects;
-    }
-
-    public void setObjects(Object objects) {
-        this.objects = objects;
-    }
-
 
     public String getResponsecode() {
         return responsecode;
@@ -29,12 +20,12 @@ public class ApiResponse {
         this.responsecode = responsecode;
     }
 
-    public String getData() {
+    public String getDataDS() {
         return dataDS;
     }
 
-    public void setData(String data) {
-        this.dataDS = data;
+    public void setDataDS(String dataDS) {
+        this.dataDS = dataDS;
     }
 
     public String getMessage() {
@@ -44,4 +35,19 @@ public class ApiResponse {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    @SerializedName("data")
+    private CareerData careerData;
+
+    private String message;
+
+    public CareerData getCareerData() {
+        return careerData;
+    }
+
+    public void setCareerData(CareerData careerData) {
+        this.careerData = careerData;
+    }
+
 }
+

@@ -30,6 +30,9 @@
             android:name=".RegisterationActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".AddEditPersonDetails"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".SplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -27,6 +27,7 @@ import com.google.gson.Gson;
 import com.namdev.sanyukt.beans.ApiResponse;
 import com.namdev.sanyukt.beans.AppConstants;
 import com.namdev.sanyukt.beans.Member;
+import com.namdev.sanyukt.beans.MemberResponse;
 import com.namdev.sanyukt.beans.Users;
 import com.namdev.sanyukt.utils.AppController;
 import com.namdev.sanyukt.utils.AppPreferences;
@@ -91,7 +92,7 @@ public class AddPersonFragment extends Fragment {
         FatherOcupationSpinner(rootView);
         HeightSpinner(rootView);
 
-        final EditText height = (EditText) rootView.findViewById(R.id.id_input_height);
+//        final EditText height = (EditText) rootView.findViewById(R.id.id_input_height);
         final EditText weight = (EditText) rootView.findViewById(R.id.id_input_weight);
         final EditText name = (EditText) rootView.findViewById(R.id.id_input_name);
         dob = (EditText) rootView.findViewById(R.id.id_input_dob);
@@ -155,12 +156,12 @@ public class AddPersonFragment extends Fragment {
                 member.setMemberUserId(users.getUserid());
                 member.setAction(AppConstants.MEMBER_CREATE);
                 Log.d("Harish", " Member Details " + new Gson().toJson(member));
-                GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
-                        ApiResponse.class, member, new Response.Listener<ApiResponse>() {
+                GenericRequest genericRequest = new GenericRequest<MemberResponse>(Request.Method.POST, AppConstants.BASE_URL,
+                        MemberResponse.class, member, new Response.Listener<MemberResponse>() {
                     @Override
-                    public void onResponse(ApiResponse response) {
-                        if (response.getData().equals(AppConstants.SUCCESS)) {
-                            Member member = new Gson().fromJson(response.getData(), Member.class);
+                    public void onResponse(MemberResponse response) {
+                        if (response.getResponsecode().equals(AppConstants.SUCCESS)) {
+                            Member member = response.getMember();
                             if (member.getMemberId() != null) {
                                 Toast.makeText(mActivity, "member Added successfully", Toast.LENGTH_SHORT).show();
                             }
@@ -445,8 +446,6 @@ public class AddPersonFragment extends Fragment {
             }
         });
     }
-
-
 
 
     private void MotherOcupationSpinner(View rootView) {

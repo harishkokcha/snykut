@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -72,21 +73,23 @@ public class RegisterationActivity extends Activity {
                     users.setUsername(nameEditText.getText().toString());
                     users.setUserpassword(passwordEditText.getText().toString());
                     users.setAction(AppConstants.USER_CREATE_ACTION);
+
                     GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.BASE_URL,
                             ApiResponse.class, users, new Response.Listener<ApiResponse>() {
                         @Override
                         public void onResponse(ApiResponse response) {
-                            if (response.getData().equals(AppConstants.SUCCESS)) {
-                                Users user = new Gson().fromJson(response.getData(), Users.class);
+                            if (response.getResponsecode().equals(AppConstants.SUCCESS)) {
+                                Users user = new Gson().fromJson((response.getObjects()).toString(), Users.class);
+                                Log.d("Harish", "response user" + new Gson().toJson(user));
                                 if (user.getUserid() != null) {
-                                    setUpMobileVerificationDialog(mActivity);
+                                    setUpMobileVerificationDialog(mActivity, user);
                                 }
                             }
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-
+                            Log.d("Harish", "response " + new Gson().toJson(error));
                         }
                     }) {
                     };
@@ -109,7 +112,7 @@ public class RegisterationActivity extends Activity {
         resendOtpBtn.setClickable(false);
     }
 
-    private void setUpMobileVerificationDialog(final Activity mActivity) {
+    private void setUpMobileVerificationDialog(final Activity mActivity, final Users user) {
 
         final Dialog mobileDialog = new Dialog(mActivity, R.style.customDialog);
         mobileDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
@@ -165,20 +168,26 @@ public class RegisterationActivity extends Activity {
 
                     mobileVerifiedActionBtn.setEnabled(false);
                     mobileVerifiedActionBtn.setBackgroundColor(mCommonUtils.getColorInt(R.color.darker_grey, mActivity));
-                    userPhoneVerification.setUserID("23425");
+                    userPhoneVerification.setUserID(user.getUserid());
                     userPhoneVerification.setOtp(otpNumber);
-                    GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.USER_LOGIN,
+                    userPhoneVerification.setAction(AppConstants.OTP_VERIFY);
+                    GenericRequest genericRequest = new GenericRequest<ApiResponse>(Request.Method.POST, AppConstants.BASE_URL,
                             ApiResponse.class, userPhoneVerification, new Response.Listener<ApiResponse>() {
                         @Override
                         public void onResponse(ApiResponse response) {
-                            if (response.getData().equals(AppConstants.SUCCESS)) {
-
+                            if (response.getResponsecode().equals(AppConstants.SUCCESS)) {
+                                if (user.getUserid() != null) {
+                                    AppPreferences.getInstance().setUserLogin(mActivity, user);
+                                    Intent intent = new Intent(mActivity, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
                             }
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-
+                            Log.d("Harish", "response " + new Gson().toJson(error));
                         }
                     }) {
                     };
