@@ -140,7 +140,7 @@ public class SanyuktListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     private class MemberViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView name, ageHeight, edu, city, createdBy, remove,edit;
+        TextView name, ageHeight, edu, city, createdBy, remove, edit;
         ImageView imageView;
 
         MemberViewHolder(View itemView) {
@@ -166,7 +166,7 @@ public class SanyuktListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 mActivity.startActivity(intent);
             } else if (v == remove) {
                 // Delete user api
-            }else if(v==edit){
+            } else if (v == edit) {
                 Intent intent = new Intent(mActivity, AddEditPersonDetails.class);
                 intent.putExtra(AppConstants.MemberId, mMemberList.get(getAdapterPosition()).getMemberId());
                 mActivity.startActivity(intent);

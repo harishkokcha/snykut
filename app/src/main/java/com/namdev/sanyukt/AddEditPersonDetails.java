@@ -57,7 +57,6 @@ public class AddEditPersonDetails extends AppCompatActivity implements View.OnCl
     private Calendar selectedCalendar;
     private DatePickerDialog datePickerDialog;
     private EditText dob;
-    private Member upData;
     private EditText weight;
     private EditText name;
     private EditText fGotra;

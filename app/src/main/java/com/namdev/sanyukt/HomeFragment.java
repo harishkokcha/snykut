@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
         imageFragmentPagerAdapter = new ImageFragmentPagerAdapter(getChildFragmentManager());
         viewPager = (ViewPager) rootView.findViewById(R.id.pager);
         viewPager.setAdapter(imageFragmentPagerAdapter);
-
+        viewPager.setVisibility(View.GONE);
         pageIndicator = (BubbleViewPagerIndicator) rootView.findViewById(R.id.page_indicator);
         pageIndicator.makeBubbles(R.drawable.bg_bubble_dark_indicator, sliderImagesId.length);
         pageIndicator.setBubbleActive(0);
